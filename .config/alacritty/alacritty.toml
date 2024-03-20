@@ -9,29 +9,29 @@ draw_bold_text_with_bright_colors = false
 blinking = "On"
 
 [font]
-size = 7.5
+size = 8
 
 [font.bold]
-family = "JetBrainsMonoNL Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "CommitMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNL Nerd Font"
+family = "CommitMono Nerd Font"
 
 [scrolling]
 history = 10000
 multiplier = 3
 
 [window]
-opacity = 0.8
+opacity = 1
 dynamic_title = false
 title = "Alacritty"
 dimensions = {columns = 115, lines = 30}
