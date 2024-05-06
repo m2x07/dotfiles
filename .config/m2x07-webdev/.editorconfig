@@ -15,3 +15,7 @@ max_line_length = 120
 [*.html]
 indent_size = 2
 tab_width = 2
+
+[*.yml,*.yaml]
+indent_size = 2
+tab_width = 2
