@@ -110,9 +110,11 @@ export NVM_DIR="$HOME/.nvm"
 
 alias nv="nvim"
 alias nf="neofetch"
+alias ff="fastfetch"
 alias l="ls -lh"
 alias ll="ls -lah"
 alias ls="lsd"
 alias zshconfig="nvim ~/.zshrc"
 alias mktempf='mv $(mktemp) .'
 alias qemu_vm1="qemu-system-x86_64 -enable-kvm -cpu host -smp 2 -vga virtio -display sdl,gl=on -m 2G -boot order=d -audiodev pipewire,id=pipewire,out.stream-name=foobar,in.stream-name=foobar -device intel-hda -device hda-duplex,audiodev=pipewire,mixer=off -drive file=/home/m2x07/m2x07/qemu/archlinux_vm_1.qcow2"
+alias open="xdg-open"
