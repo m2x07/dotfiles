@@ -1,5 +1,7 @@
 import = [
-    "~/.config/alacritty/colors/m2x07-dark.toml"
+    # "~/.config/alacritty/colors/m2x07-dark.toml"
+    # "~/.config/alacritty/colors/catppuccin-macchiato.toml"
+    "~/.config/alacritty/colors/catppuccin-mocha.toml"
 ]
 
 [env]
@@ -16,19 +18,19 @@ size = 7.5
 offset = {x = 0, y = 1}
 
 [font.bold]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "SemiBold"
 
 [font.bold_italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "SemiBold Italic"
 
 [font.italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [scrolling]
 history = 10000
