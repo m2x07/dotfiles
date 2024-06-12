@@ -1,7 +1,7 @@
 import = [
-    # "~/.config/alacritty/colors/m2x07-dark.toml"
+    "~/.config/alacritty/colors/m2x07-dark.toml"
     # "~/.config/alacritty/colors/catppuccin-macchiato.toml"
-    "~/.config/alacritty/colors/catppuccin-mocha.toml"
+    # "~/.config/alacritty/colors/catppuccin-mocha.toml"
 ]
 
 [env]
@@ -14,23 +14,23 @@ draw_bold_text_with_bright_colors = false
 blinking = "On"
 
 [font]
-size = 7.5
+size = 11
 offset = {x = 0, y = 1}
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "GeistMono Nerd Font"
 style = "SemiBold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "GeistMono Nerd Font"
 style = "SemiBold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "GeistMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "GeistMono Nerd Font"
 
 [scrolling]
 history = 10000
