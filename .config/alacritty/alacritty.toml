@@ -14,31 +14,33 @@ draw_bold_text_with_bright_colors = false
 blinking = "On"
 
 [font]
-size = 11
-offset = {x = 0, y = 1}
+size = 10
+offset = {x = 0, y = 0}
 
 [font.bold]
-family = "GeistMono Nerd Font"
-style = "SemiBold"
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
 
 [font.bold_italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "SemiBold Italic"
 
 [font.italic]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "GeistMono Nerd Font"
+family = "JetBrainsMono Nerd Font"
 
 [scrolling]
-history = 10000
 multiplier = 3
+history = 10000
 
 [window]
+# padding = {x = 5, y = 0 }
 opacity = 1
-dynamic_title = false
 title = "Alacritty"
+decorations = "None"
+dynamic_title = true
 dimensions = {columns = 115, lines = 30}
 
