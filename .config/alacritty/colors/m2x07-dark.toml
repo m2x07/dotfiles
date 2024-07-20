@@ -1,7 +1,5 @@
-
 [colors.primary]
 background = '#1e1e1e'
-# background = '#17171b'
 foreground = '#e5e5e5'
 
 [colors.normal]
@@ -23,3 +21,6 @@ blue = '#6cb6f7'
 magenta = '#d87dd2'
 cyan = '#97e2f4'
 white = '#eaeaea'
+
+[window]
+opacity = 1
