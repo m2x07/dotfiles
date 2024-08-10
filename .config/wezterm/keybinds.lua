@@ -1,37 +1,38 @@
 local wezterm = require "wezterm"
+local act = wezterm.action
 local M
 
 M = {
 	{
 		key = "|",
 		mods = "LEADER|SHIFT",
-		action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
+		action = act.SplitHorizontal { domain = "CurrentPaneDomain" },
 	},
 	{
 		key = "-",
 		mods = "LEADER",
-		action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
+		action = act.SplitVertical { domain = "CurrentPaneDomain" },
 	},
     {
         key= 't',
         mods = 'LEADER',
-        action = wezterm.action.SpawnTab 'CurrentPaneDomain'
+        action = act.SpawnTab 'CurrentPaneDomain'
     },
     {
         key = 'n',
         mods = 'LEADER',
-        action = wezterm.action.ActivateTabRelative(1)
+        action = act.ActivateTabRelative(1)
     },
     {
         key = 'p',
         mods = 'LEADER',
-        action = wezterm.action.ActivateTabRelative(-1)
+        action = act.ActivateTabRelative(-1)
     },
     {
         key = 'w',
         mods = 'LEADER',
-        action = wezterm.action.ShowTabNavigator,
-    },
+        action = act.ShowTabNavigator,
+    }
 }
 
 return M
