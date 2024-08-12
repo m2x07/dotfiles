@@ -18,9 +18,11 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.85
 config.window_decorations = "NONE"
 config.initial_rows = 40
-config.debug_key_events = true
+
+-- NOTE: use when having issues when finding name of the key for keybinds
+-- config.debug_key_events = true
+
 config.initial_cols = 115
-config.use_ime = true
 config.window_padding = {
 	left = 0,
 	right = 0,
