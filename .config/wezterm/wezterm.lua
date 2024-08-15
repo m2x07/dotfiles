@@ -20,7 +20,7 @@ config.window_decorations = "NONE"
 config.initial_rows = 40
 
 -- NOTE: use when having issues when finding name of the key for keybinds
--- config.debug_key_events = true
+config.debug_key_events = true
 
 config.initial_cols = 115
 config.window_padding = {
