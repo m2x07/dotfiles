@@ -41,12 +41,12 @@ local M = {
 	},
 	{
 		key = "Keypad9",
-		mods = "NONE",
+		mods = "CTRL",
 		action = act.ScrollByPage(-1),
 	},
 	{
 		key = "Keypad3",
-		mod = "NONE",
+		mod = "CTRL",
 		action = act.ScrollByPage(1),
 	},
 	{
