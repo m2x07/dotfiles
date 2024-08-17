@@ -9,9 +9,14 @@ config.color_scheme = "m2x07-black"
 -- config.color_scheme = 'Abernathy'
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
-config.font_size = 11
+
+config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
+config.font_size = 10
+config.freetype_interpreter_version = 35
+config.freetype_load_target = 'Light'
+config.freetype_render_target = 'HorizontalLcd'
+
 config.animation_fps = 60
-config.font = wez.font("MesloLGM Nerd Font", { weight = "Regular" })
 config.scrollback_lines = 5000
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
