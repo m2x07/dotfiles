@@ -54,6 +54,16 @@ local M = {
 		mods = "LEADER",
 		action = act.ShowDebugOverlay,
 	},
+    {
+        key = 'Keypad9',
+        mods = 'CTRL|SHIFT',
+        action = act.MoveTabRelative(-1)
+    },
+    {
+        key = 'Keypad3',
+        mods = 'CTRL|SHIFT',
+        action = act.MoveTabRelative(1)
+    },
 }
 
 return M
