@@ -39,7 +39,7 @@ config.inactive_pane_hsb = {
 	saturation = 1,
 }
 config.leader = {
-    key = 'w',
+    key = 'a',
     mods = 'CTRL',
     timeout_milliseconds = 1500,
 }
