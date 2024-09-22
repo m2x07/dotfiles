@@ -1,0 +1,14 @@
+[colors]
+foreground = "#ffffff"
+background = "#000000"
+cursor_fg = "#000000"
+cursor_bg = "#ffffff"
+cursor_border = "#ffffff"
+selection_bg = "#1A53AC"
+selection_fg = "#E6EDF3"
+split = "#7aa2f7"
+compose_cursor = "#ff9e64"
+scrollbar_thumb = "#292e42"
+
+ansi = ["#000000", "#fc5555", "#5be599", "#fcfc14", "#0000ff", "#fc14ec", "#1414fc", "#ffffff"]
+brights = ["#000000", "#fc5555", "#5be599", "#fcfc14", "#0000ff", "#fc14ec", "#1414fc", "#ffffff"]
