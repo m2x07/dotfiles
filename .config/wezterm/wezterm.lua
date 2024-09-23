@@ -42,8 +42,8 @@ config.color_scheme = "tokyonight_night"
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
 
-config.font = wez.font("GeistMono Nerd Font", { weight = "Regular" })
-config.font_size = 11
+config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "DemiBold" })
+config.font_size = 10
 config.freetype_interpreter_version = 35
 config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
