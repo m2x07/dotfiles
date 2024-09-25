@@ -2,42 +2,11 @@ local wez = require("wezterm")
 local config = wez.config_builder()
 local keybinds = require("keybinds")
 config.keys = keybinds
-local custom_themes = {
-    ['m2x07_black'] = {
-        foreground = "#ffffff",
-        background = "#040811",
-        cursor_fg = "#000000",
-        cursor_bg = "#ffffff",
-        cursor_border = "#ffffff",
-        selection_bg = "#1a53ac",
-        selection_fg = "#e6edf3",
-        split="#333333",
-        ansi = {
-            "#000000",
-            "#fc5555",
-            "#5be599",
-            "#fcfc14",
-            "#0000ff",
-            "#fc14ec",
-            "#14f4fc",
-            "#ffffff",
-        },
-        brights = {
-            "#555555",
-            "#fc5555",
-            "#5be599",
-            "#fcfc14",
-            "#0000ff",
-            "#fc14ec",
-            "#14f4fc",
-            "#ffffff",
-        }
-    }
-}
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
-config.color_schemes = custom_themes
+
 -- config.color_scheme = "m2x07_black"
 config.color_scheme = "tokyonight_night"
+-- config.color_scheme = "Oxocarbon Dark"
 -- config.color_scheme = "Dracula"
 -- config.color_scheme = 'Abernathy'
 -- config.color_scheme = 'Aci (Gogh)'

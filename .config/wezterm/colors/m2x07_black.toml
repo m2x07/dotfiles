@@ -1,0 +1,62 @@
+
+[colors]
+background = '#040811'
+foreground = '#ffffff'
+cursor_bg = '#ffffff'
+cursor_fg = '#000000'
+cursor_border = '#ffffff'
+selection_bg = '#1a53ac'
+selection_fg = '#e6edf3'
+split = '#333333'
+
+ansi = [
+    '#000000',
+    '#fc5555',
+    '#5be599',
+    '#fcfc14',
+    '#0000ff',
+    '#fc14ec',
+    '#14fcfc',
+    '#ffffff',
+]
+brights = [
+    '#555555',
+    '#fc5555',
+    '#5be599',
+    '#fcfc14',
+    '#0000ff',
+    '#fc14ec',
+    '#14fcfc',
+    '#ffffff',
+]
+
+[colors.tab_bar]
+background = "#262626"
+
+[colors.tab_bar.active_tab]
+bg_color = '#161616'
+fg_color = '#ffffff'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#262626'
+fg_color = '#ffffff'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab]
+bg_color = '#262626'
+fg_color = '#ffffff'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+
+[metadata]
+name = 'm2x07_black'
