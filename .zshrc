@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Shell Options
 setopt append_history
 setopt inc_append_history
@@ -16,6 +9,7 @@ setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt no_hist_beep
 setopt autocd
+setopt promptsubst
 
 # History
 HISTFILE=~/.zsh_history
@@ -31,15 +25,25 @@ fi
 source "$ZINIT_HOME/zinit.zsh"
 
 # Loading Plugins
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
+zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 
 autoload -U compinit && compinit
+_comp_options+=(globdots)
 
 zinit cdreplay -q
+
+# Prompt
+# zinit snippet OMZT::robbyrussell
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
 
 # Keybinds
 bindkey -e
@@ -63,8 +67,6 @@ alias ls="lsd"
 alias l="lsd -l"
 alias ll="lsd -al"
 alias nv="nvim"
+alias nf="neofetch"
 
 eval "$(fzf --zsh)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
