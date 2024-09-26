@@ -28,6 +28,7 @@ source "$ZINIT_HOME/zinit.zsh"
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
+zinit load MichaelAquilina/zsh-you-should-use
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 
@@ -37,13 +38,12 @@ _comp_options+=(globdots)
 zinit cdreplay -q
 
 # Prompt
-# zinit snippet OMZT::robbyrussell
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-# zinit light sindresorhus/pure
+
+# ENV Exports
 
 # Keybinds
 bindkey -e
