@@ -29,6 +29,7 @@ zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
 zinit load MichaelAquilina/zsh-you-should-use
+zinit load MichaelAquilina/zsh-auto-notify
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 
@@ -44,6 +45,8 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 # ENV Exports
+export AUTO_NOTIFY_THRESHOLD=10
+AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava")
 
 # Keybinds
 bindkey -e
@@ -68,5 +71,8 @@ alias l="lsd -l"
 alias ll="lsd -al"
 alias nv="nvim"
 alias nf="neofetch"
+alias open="xdg-open"
+alias history="history 0"
+alias tree="tree -CaI \"node_modules|.git\" --dirsfirst"
 
 eval "$(fzf --zsh)"
