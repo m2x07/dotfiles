@@ -66,9 +66,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ## Aliases
-alias ls="lsd"
-alias l="lsd -l"
-alias ll="lsd -al"
+alias ls="lsd --group-directories-first"
+alias l="lsd -l --group-directories-first"
+alias ll="lsd -al --group-directories-first"
 alias nv="nvim"
 alias nf="neofetch"
 alias open="xdg-open"

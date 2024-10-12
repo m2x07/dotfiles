@@ -4,8 +4,8 @@ local keybinds = require("keybinds")
 config.keys = keybinds
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
 
--- config.color_scheme = "m2x07_black"
-config.color_scheme = "tokyonight_night"
+config.color_scheme = "m2x07_black"
+-- config.color_scheme = "tokyonight_night"
 -- config.color_scheme = "Oxocarbon Dark"
 -- config.color_scheme = "Dracula"
 -- config.color_scheme = 'Abernathy'
