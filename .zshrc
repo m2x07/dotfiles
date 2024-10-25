@@ -76,3 +76,5 @@ alias history="history 0"
 alias tree="tree -CaI \"node_modules|.git\" --dirsfirst"
 
 eval "$(fzf --zsh)"
+
+export GOPATH=$HOME/.local/go
