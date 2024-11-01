@@ -32,8 +32,8 @@ config.enable_wayland = false
 config.debug_key_events = true
 
 config.window_padding = {
-	left = "1cell",
-	right = "1cell",
+	left = 0,
+	right = 0,
 	top = 0,
 	bottom = 0,
 }
