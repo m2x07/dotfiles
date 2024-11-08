@@ -43,7 +43,7 @@ config.inactive_pane_hsb = {
 }
 config.leader = {
 	key = "w",
-	mods = "CTRL",
+	mods = "ALT",
 	timeout_milliseconds = 1500,
 }
 return config
