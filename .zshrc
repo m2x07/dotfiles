@@ -9,7 +9,9 @@ setopt hist_expire_dups_first
 setopt hist_find_no_dups
 setopt no_hist_beep
 setopt autocd
+setopt autopushd
 setopt promptsubst
+setopt interactivecomments
 
 # History
 HISTFILE=~/.zsh_history
@@ -46,7 +48,7 @@ zinit light starship/starship
 
 # ENV Exports
 export AUTO_NOTIFY_THRESHOLD=10
-AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat")
+AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat" "gpg" "gpg2")
 
 # Keybinds
 bindkey -e
@@ -74,6 +76,19 @@ alias nf="neofetch"
 alias open="xdg-open"
 alias history="history 0"
 alias tree="tree -CaI \"node_modules|.git\" --dirsfirst"
+alias d="dirs -v"
+alias 1="cd ~1"
+alias 2="cd ~2"
+alias 3="cd ~3"
+alias 4="cd ~4"
+alias 5="cd ~5"
+alias 6="cd ~6"
+alias 7="cd ~7"
+alias 8="cd ~8"
+alias 9="cd ~9"
+alias 10="cd ~10"
+alias 11="cd ~11"
+alias 12="cd ~12"
 
 eval "$(fzf --zsh)"
 
