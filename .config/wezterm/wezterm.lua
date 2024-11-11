@@ -4,9 +4,11 @@ local keybinds = require("keybinds")
 config.keys = keybinds
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
 
-config.color_scheme = "m2x07_black"
+-- config.color_scheme = "Emerald Glow"
+config.color_scheme = "Noir"
+-- all of the above are my own colorschemes
+
 -- config.color_scheme = "tokyonight_night"
--- config.color_scheme = "Oxocarbon Dark"
 -- config.color_scheme = "Dracula"
 -- config.color_scheme = 'Abernathy'
 -- config.color_scheme = 'Aci (Gogh)'
@@ -24,8 +26,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 1
 config.window_decorations = "NONE"
-config.initial_rows = 35
-config.initial_cols = 150
+config.initial_rows = 30
+config.initial_cols = 120
 config.enable_wayland = false
 
 -- NOTE: use when having issues when finding name of the key for keybinds
