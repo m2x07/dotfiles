@@ -10,6 +10,7 @@ setopt hist_find_no_dups
 setopt no_hist_beep
 setopt autocd
 setopt autopushd
+setopt pushdignoredups
 setopt promptsubst
 setopt interactivecomments
 
@@ -48,7 +49,7 @@ zinit light starship/starship
 
 # ENV Exports
 export AUTO_NOTIFY_THRESHOLD=10
-AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat" "gpg" "gpg2")
+AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat" "gpg" "gpg2" "ping")
 
 # Keybinds
 bindkey -e
@@ -93,3 +94,4 @@ alias 12="cd ~12"
 eval "$(fzf --zsh)"
 
 export GOPATH=$HOME/.local/go
+export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
