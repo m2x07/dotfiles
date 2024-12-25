@@ -63,6 +63,10 @@ bindkey '^n' history-search-forward
 
 # Completion stuff
 zstyle ":completion:*" matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 zstyle ":completion:*" menu select
 
