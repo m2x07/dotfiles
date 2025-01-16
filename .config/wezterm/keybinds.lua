@@ -40,12 +40,12 @@ local M = {
 		}),
 	},
 	{
-		key = "Keypad9",
+		key = "k",
 		mods = "CTRL",
 		action = act.ScrollByPage(-1),
 	},
 	{
-		key = "Keypad3",
+		key = "j",
 		mods = "CTRL",
 		action = act.ScrollByPage(1),
 	},
@@ -55,15 +55,35 @@ local M = {
 		action = act.ShowDebugOverlay,
 	},
 	{
-		key = "Keypad9",
+		key = "h",
 		mods = "CTRL|SHIFT",
 		action = act.MoveTabRelative(-1),
 	},
 	{
-		key = "Keypad3",
+		key = "l",
 		mods = "CTRL|SHIFT",
 		action = act.MoveTabRelative(1),
 	},
+    {
+        key = 'j',
+        mods = "ALT|SHIFT",
+        action = act.AdjustPaneSize { 'Down', 1 },
+    },
+    {
+        key = 'k',
+        mods = "ALT|SHIFT",
+        action = act.AdjustPaneSize { 'Up', 1 },
+    },
+    {
+        key = 'h',
+        mods = "ALT|SHIFT",
+        action = act.AdjustPaneSize { 'Left', 1 },
+    },
+    {
+        key = 'l',
+        mods = "ALT|SHIFT",
+        action = act.AdjustPaneSize { 'Right', 1 },
+    },
 }
 
 return M

@@ -38,19 +38,11 @@ zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
 zinit load MichaelAquilina/zsh-you-should-use
 zinit load MichaelAquilina/zsh-auto-notify
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
 
 autoload -U compinit && compinit
 _comp_options+=(globdots)
 
 zinit cdreplay -q
-
-# Prompt
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
 
 # ENV Exports
 export AUTO_NOTIFY_THRESHOLD=10
@@ -84,7 +76,7 @@ alias ll="lsd -al --group-directories-first"
 alias nv="nvim"
 alias nf="neofetch"
 alias open="xdg-open"
-alias history="history 0"
+alias hist="history 0"
 alias tree="tree -CaI \"node_modules|.git\" --dirsfirst"
 alias d="dirs -v"
 alias 1="cd ~1"
@@ -100,7 +92,13 @@ alias 10="cd ~10"
 alias 11="cd ~11"
 alias 12="cd ~12"
 
-eval "$(fzf --zsh)"
+# FZF setup
+export FZF_CTRL_T_OPTS='--preview="head -15 {}"'
+export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border sharp'
+source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go
 export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
+
+# Prompt
+eval "$(starship init zsh)"
