@@ -4,7 +4,7 @@ local keybinds = require("keybinds")
 config.keys = keybinds
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
 
--- config.color_scheme = "Emerald Glow"
+-- config.color_scheme = "Emarald Glow"
 config.color_scheme = "Noir"
 -- all of the above are my own colorschemes
 

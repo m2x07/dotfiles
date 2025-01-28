@@ -5,9 +5,6 @@ setopt autocd
 setopt autopushd
 setopt completeinword
 setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_ignore_dups
 setopt hist_ignore_space
 setopt histverify
 setopt inc_append_history
@@ -21,8 +18,8 @@ setopt share_history
 
 # History
 HISTFILE=~/.zsh_history
-HISTSIZE=20000
-SAVEHIST=20000
+HISTSIZE=5000
+SAVEHIST=5000
 
 # Plugin Manager: zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -76,9 +73,11 @@ alias ll="lsd -al --group-directories-first"
 alias nv="nvim"
 alias nf="neofetch"
 alias open="xdg-open"
-alias hist="history 0"
+alias history="history -fED 0"
 alias tree="tree -CaI \"node_modules|.git\" --dirsfirst"
 alias d="dirs -v"
+alias pwdcp="alias pwdcp="pwd | tr -d '\n' | wl-copy""
+alias 0="cd ~0"
 alias 1="cd ~1"
 alias 2="cd ~2"
 alias 3="cd ~3"
@@ -101,4 +100,15 @@ export GOPATH=$HOME/.local/go
 export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
 
 # Prompt
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+else
+    print -P "%F{#ff0000}>>> ERROR: %F{cyan}starship%F{#ff0000} prompt not installed.%f"
+    print -P "%F{cyan}>>> INFO: Installing now:%f"
+    sudo pacman -S starship
+    if [[ $? -ne 0 ]]; then
+        print -P "%F{#ff0000}>>> ERROR: Not an Arch linux distribution. Please install %F{cyan}starship %F{#ff0000}manually.%f"
+    else
+        eval "$(starship init zsh)"
+    fi
+fi

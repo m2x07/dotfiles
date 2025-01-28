@@ -1,40 +1,41 @@
 
 [colors]
-background = '#091016'
-foreground = '#ffffff'
+background = '#011423'
+foreground = '#cbe0f0'
 cursor_bg = '#ffffff'
-cursor_fg = '#000000'
+cursor_fg = '#011423'
 cursor_border = '#ffffff'
-selection_bg = '#1a53ac'
-selection_fg = '#e6edf3'
-split = '#333333'
+selection_bg = '#033259'
+selection_fg = '#CBE0F0'
+split = '#214969'
 
 ansi = [
-    '#000000',
-    '#fc5555',
-    '#5be599',
-    '#fcfc14',
-    '#4343f2',
-    '#fc14ec',
-    '#14fcfc',
-    '#ffffff',
+    '#214969',
+    '#E52E2E',
+    '#44FFB1',
+    '#FFE073',
+    '#0FC5ED',
+    '#a277ff',
+    '#24EAF7',
+    '#CBE0F0',
 ]
+
 brights = [
-    '#555555',
-    '#fc5555',
-    '#5be599',
-    '#fcfc14',
-    '#4343f2',
-    '#fc14ec',
-    '#14fcfc',
-    '#ffffff',
+    '#214969',
+    '#E52E2E',
+    '#44FFB1',
+    '#FFE073',
+    '#0FC5ED',
+    '#a277ff',
+    '#24EAF7',
+    '#CBE0F0',
 ]
 
 [colors.tab_bar]
-background = "#262626"
+background = "#2d2d2d"
 
 [colors.tab_bar.active_tab]
-bg_color = '#161616'
+bg_color = '#011423'
 fg_color = '#ffffff'
 intensity = 'Normal'
 italic = false
@@ -42,7 +43,7 @@ strikethrough = false
 underline = 'None'
 
 [colors.tab_bar.inactive_tab]
-bg_color = '#262626'
+bg_color = '#2d2d2d'
 fg_color = '#ffffff'
 intensity = 'Normal'
 italic = false
@@ -50,7 +51,7 @@ strikethrough = false
 underline = 'None'
 
 [colors.tab_bar.new_tab]
-bg_color = '#262626'
+bg_color = '#2d2d2d'
 fg_color = '#ffffff'
 intensity = 'Normal'
 italic = false
@@ -59,4 +60,4 @@ underline = 'None'
 
 
 [metadata]
-name = 'Emerald Glow'
+name = 'Emarald Glow'
