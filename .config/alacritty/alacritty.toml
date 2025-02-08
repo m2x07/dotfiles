@@ -1,9 +1,3 @@
-import = [
-    # "~/.config/alacritty/colors/m2x07-dark.toml"
-    "~/.config/alacritty/colors/m2x07-black.toml"
-    # "~/.config/alacritty/colors/catppuccin-macchiato.toml"
-    # "~/.config/alacritty/colors/catppuccin-mocha.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -44,4 +38,12 @@ title = "Alacritty"
 decorations = "None"
 dynamic_title = true
 dimensions = {columns = 115, lines = 30}
+
+[general]
+import = [
+    # "~/.config/alacritty/colors/m2x07-dark.toml"
+    "~/.config/alacritty/colors/m2x07-black.toml"
+    # "~/.config/alacritty/colors/catppuccin-macchiato.toml"
+    # "~/.config/alacritty/colors/catppuccin-mocha.toml"
+]
 
