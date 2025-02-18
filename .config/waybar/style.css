@@ -1,0 +1,63 @@
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "CaskaydiaCove Nerd Font";
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+
+window#waybar {
+    background: #050505;
+    border-bottom: 1px solid #404040;
+}
+
+tooltip {
+  background: rgba(00, 00, 00, 0.7);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+  border-radius: 4px;
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+}
+
+#workspaces button.active {
+    background: rgba(255,255,255,0.17);
+    border-bottom: 1px solid white;
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.1);
+    transition: none;
+    box-shadow: none;
+}
+
+#clock {
+    margin: 0 20px;
+}
+
+#pulseaudio.muted.source-muted {
+    color: gray;
+}
+
+#network,#bluetooth {
+    padding: 0 3px;
+}
+
+#network.disconnected {
+    color: gray;
+}
+#bluetooth.off {
+    color: gray;
+}
+
+.modules-right {
+    padding: 0 10px 0 0;
+}

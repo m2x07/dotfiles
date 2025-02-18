@@ -1,0 +1,11 @@
+width=30%
+height=35%
+prompt=Search Apps
+position=center
+insensitive=true
+allow_images=true
+term=alacritty -e
+hide_scroll=true
+no_actions=true
+layer=overlay
+sort_order=alphabetical
