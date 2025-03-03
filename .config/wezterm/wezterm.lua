@@ -14,18 +14,17 @@ config.color_scheme = "Noir"
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
 
-config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "DemiBold" })
-config.font_size = 10
+config.font = wez.font("Iosevka Nerd Font", { weight = "Regular" })
+config.font_size = 12
 config.freetype_interpreter_version = 35
 config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
-
 config.animation_fps = 60
 config.scrollback_lines = 5000
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.85
--- config.window_decorations = "RESIZE"
+config.window_background_opacity = 1
+config.window_decorations = "RESIZE"
 config.initial_rows = 30
 config.initial_cols = 120
 config.enable_wayland = false

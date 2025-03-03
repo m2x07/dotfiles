@@ -84,6 +84,26 @@ local M = {
         mods = "ALT|SHIFT",
         action = act.AdjustPaneSize { 'Right', 1 },
     },
+    {
+        key = 'h',
+        mods = "ALT",
+        action = act.ActivatePaneDirection 'Left',
+    },
+    {
+        key = 'j',
+        mods = "ALT",
+        action = act.ActivatePaneDirection 'Down',
+    },
+    {
+        key = 'k',
+        mods = "ALT",
+        action = act.ActivatePaneDirection 'Up',
+    },
+    {
+        key = 'l',
+        mods = "ALT",
+        action = act.ActivatePaneDirection 'Right',
+    },
 }
 
 return M
