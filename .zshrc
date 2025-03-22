@@ -93,12 +93,20 @@ alias 11="cd ~11"
 alias 12="cd ~12"
 
 # FZF setup
-export FZF_CTRL_T_OPTS='--preview="head -15 {}"'
-export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border sharp'
+export FZF_CTRL_T_OPTS='--prompt="Files> "'
+export FZF_ALT_C_OPTS='--height 30% --prompt="Directories> "'
+export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-border=sharp --preview-label="Preview"'
 source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go
 export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
+
+fhist ()
+{
+    unset cmd
+    CMD=$(builtin history -fED 0 | fzf --tac --no-sort | cut -d' ' -f 9-)
+    print -z $CMD
+}
 
 # Prompt
 if command -v starship >/dev/null 2>&1; then

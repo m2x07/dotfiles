@@ -1,5 +1,5 @@
 #!/bin/sh
 
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export TERMINAL_PROG="alacritty"
+export TERMINAL="wezterm"
+export TERMINAL_PROG="wezterm"
