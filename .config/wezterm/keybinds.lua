@@ -40,70 +40,30 @@ local M = {
 		}),
 	},
 	{
-		key = "k",
-		mods = "CTRL",
-		action = act.ScrollByPage(-1),
-	},
-	{
-		key = "j",
-		mods = "CTRL",
-		action = act.ScrollByPage(1),
-	},
-	{
 		key = "d",
 		mods = "LEADER",
 		action = act.ShowDebugOverlay,
 	},
 	{
 		key = "h",
-		mods = "CTRL|SHIFT",
-		action = act.MoveTabRelative(-1),
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "j",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Up"),
 	},
 	{
 		key = "l",
-		mods = "CTRL|SHIFT",
-		action = act.MoveTabRelative(1),
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Right"),
 	},
-    {
-        key = 'j',
-        mods = "ALT|SHIFT",
-        action = act.AdjustPaneSize { 'Down', 1 },
-    },
-    {
-        key = 'k',
-        mods = "ALT|SHIFT",
-        action = act.AdjustPaneSize { 'Up', 1 },
-    },
-    {
-        key = 'h',
-        mods = "ALT|SHIFT",
-        action = act.AdjustPaneSize { 'Left', 1 },
-    },
-    {
-        key = 'l',
-        mods = "ALT|SHIFT",
-        action = act.AdjustPaneSize { 'Right', 1 },
-    },
-    {
-        key = 'h',
-        mods = "ALT",
-        action = act.ActivatePaneDirection 'Left',
-    },
-    {
-        key = 'j',
-        mods = "ALT",
-        action = act.ActivatePaneDirection 'Down',
-    },
-    {
-        key = 'k',
-        mods = "ALT",
-        action = act.ActivatePaneDirection 'Up',
-    },
-    {
-        key = 'l',
-        mods = "ALT",
-        action = act.ActivatePaneDirection 'Right',
-    },
 }
 
 return M
