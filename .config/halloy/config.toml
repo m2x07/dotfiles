@@ -1,0 +1,19 @@
+theme = "macaw"
+
+[servers.libera]
+nickname = "m2x07/libera"
+server = "oracle.vivekkadre.com"
+port = 1025
+password_file = "/home/m2x07/.config/halloy/znc_libera_pass"
+use_tls = true
+dangerously_accept_invalid_certs = true
+alt_nicks = ["_m2x07", "__m2x07"]
+
+[font]
+family = "JetBrainsMonoNL Nerd Font"
+
+[sidebar]
+buffer_action = "replace-pane"
+
+[pane]
+split_axis = "vertical"
