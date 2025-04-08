@@ -16,6 +16,7 @@ config.color_scheme = "Noir"
 
 config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
 config.font_size = 10
+config.line_height = 1.1
 config.freetype_interpreter_version = 35
 config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
