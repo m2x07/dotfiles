@@ -16,6 +16,9 @@ setopt pushdignoredups
 setopt pushdminus
 setopt share_history
 
+# Path for local scripts/binaries
+export PATH="$PATH:$HOME/.local/bin"
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=5000
