@@ -104,8 +104,8 @@ yay -S --needed --noconfirm ${PACKAGES[@]}
 
 # declare -a ERR_STACK
 ERR_STACK=()
-if [[ $? -eq 1 ]]; then
-    ERR_STACK+=("Network unavailable. pacman couldn't install some package(s)")
+if [[ $? -gt 0 ]]; then
+    ERR_STACK+=("Error(s) occoured while running yay")
 fi
 
 # Packages to install from flatpak
@@ -126,17 +126,17 @@ echo -e "\n--- Installing flatpak packages\n"
 
 # Install each package individually cus why not
 for pak in ${FLATPAKS[@]}; do
-# only install if flatpak in not already installed
-if ! flatpak list | grep -i "$pak" &>/dev/null; then
-    echo "--- Installing flatpak: ${pak}"
-    flatpak install $pak --assumeyes
+    # only install if flatpak in not already installed
+    if ! flatpak list | grep -i "$pak" &>/dev/null; then
+        echo "--- Installing flatpak: ${pak}"
+        flatpak install $pak --assumeyes
 
-    if [[ $? -eq 1 ]]; then
-        ERR_STACK+=("Network unavailable. flatpak couldn't install $pak")
+        if [[ $? -gt 0 ]]; then
+            ERR_STACK+=("Flatpak error. couldn't install $pak")
+        fi
+    else
+        echo "--- Flatpak $pak already installed."
     fi
-else
-    echo "Flatpak $pak already installed."
-fi
 done
 
 # Populate dotfiles
