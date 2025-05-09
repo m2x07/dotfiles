@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Exit on any errors
-# set -e
+set -e
 
 print_logo() {
     cat << "EOF"
@@ -105,7 +105,7 @@ yay -S --needed --noconfirm ${PACKAGES[@]}
 # declare -a ERR_STACK
 ERR_STACK=()
 if [[ $? -gt 0 ]]; then
-    ERR_STACK+=("Error(s) occoured while running yay")
+    ERR_STACK+=("Error(s) occoured while running yay. exit code ${?}")
 fi
 
 # Packages to install from flatpak
@@ -132,7 +132,7 @@ for pak in ${FLATPAKS[@]}; do
         flatpak install $pak --assumeyes
 
         if [[ $? -gt 0 ]]; then
-            ERR_STACK+=("Flatpak error. couldn't install $pak")
+            ERR_STACK+=("Flatpak error. couldn't install $pak. exit code ${?}")
         fi
     else
         echo "--- Flatpak $pak already installed."
