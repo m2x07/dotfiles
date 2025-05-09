@@ -17,6 +17,7 @@ config.color_scheme = "Noir"
 config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
 config.font_size = 10
 config.line_height = 1.1
+config.harfbuzz_features = { "calt=0", "liga=0", "clig=0" }
 config.freetype_interpreter_version = 35
 config.freetype_load_target = "Light"
 config.freetype_render_target = "HorizontalLcd"
@@ -24,7 +25,7 @@ config.animation_fps = 60
 config.scrollback_lines = 5000
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 1
+config.window_background_opacity = 0.85
 config.window_decorations = "RESIZE"
 config.initial_rows = 30
 config.initial_cols = 120
