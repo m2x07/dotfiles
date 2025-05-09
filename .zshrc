@@ -102,14 +102,14 @@ export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-
 source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go
-export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
+export MANPAGER="nvim +Man! -c 'set scrolloff=0 | colorscheme vim'"
 
-fhist ()
-{
-    unset cmd
-    CMD=$(builtin history -fED 0 | fzf --tac --no-sort | cut -d' ' -f 9-)
-    print -z $CMD
-}
+# fhist ()
+# {
+#     unset cmd
+#     CMD=$(builtin history -fED 0 | fzf --tac --no-sort | cut -d' ' -f 9-)
+#     print -z $CMD
+# }
 
 # Prompt
 if command -v starship >/dev/null 2>&1; then
