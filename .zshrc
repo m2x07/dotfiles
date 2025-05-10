@@ -95,6 +95,9 @@ alias 10="cd ~10"
 alias 11="cd ~11"
 alias 12="cd ~12"
 
+# Misc
+WORDCHARS='*?_[]~&;!#$%^(){}<>'
+
 # FZF setup
 export FZF_CTRL_T_OPTS='--prompt="Files> "'
 export FZF_ALT_C_OPTS='--height 30% --prompt="Directories> "'
