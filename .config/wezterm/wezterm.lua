@@ -27,8 +27,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.85
 config.window_decorations = "RESIZE"
-config.initial_rows = 30
-config.initial_cols = 120
+config.initial_rows = 28
+config.initial_cols = 135
 config.enable_wayland = false
 
 -- NOTE: use when having issues when finding name of the key for keybinds
