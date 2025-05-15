@@ -105,7 +105,7 @@ export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-
 source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go
-export MANPAGER="nvim +Man! -c 'set scrolloff=0 | colorscheme vim'"
+export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
 
 # fhist ()
 # {

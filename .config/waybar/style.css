@@ -3,13 +3,13 @@
     border-radius: 0;
     /* font-family: "JetBrainsMonoNL Nerd Font"; */
     font-family: "Inter Variable";
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
 }
 
 window#waybar {
     background: rgba(0,0,0,0.5);
-    color: white;
+    color: rgba(225,225,225,1);
 }
 
 tooltip {

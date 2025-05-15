@@ -40,7 +40,7 @@
         "format-on": "󰂯",
         "format-off": "󰂲",
         "format-connected": "󰂱",
-        "on-click": "wezterm -e bluetoothctl",
+        "on-click": "alacritty -e bluetoothctl",
         "tooltip": true,
         "tooltip-format-on": "Bluetooth On",
         "tooltip-format-off": "Bluetooth Off",
@@ -52,7 +52,7 @@
         "format-wifi": "󰖩 ",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 ",
-        "on-click": "wezterm -e nm-tui",
+        "on-click": "alacritty -e nm-tui",
         "tooltip-format-wifi": "Connected to wifi {essid}",
         "tooltip-format-ethernet": "Connected to ethernet\nGateway: {gwaddr}",
         "tooltip-format-disconnected": "Not connected to the internet",
@@ -78,7 +78,7 @@
 
     "memory": {
         "format": "MEM: {percentage}%",
-        "on-click": "wezterm -e btop",
+        "on-click": "alacritty -e btop",
         "tooltip": true,
         "tooltip-format": "Memory:\t{used}GiB / {total}GiB\nSwap:\t\t{swapUsed}GiB / {swapTotal}GiB"
     }
