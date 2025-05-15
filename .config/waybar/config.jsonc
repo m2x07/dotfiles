@@ -2,141 +2,97 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 25,
-    "spacing": 15,
+    "height": 40,
+    "spacing": 20,
     "reload_style_on_change": true,
 
+    // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window",
+        "hyprland/window"
     ],
-
     "modules-center": [
         "clock",
     ],
-
     "modules-right": [
         "tray",
-        // "cpu",
-        // "memory",
+        "memory",
         "pulseaudio",
         "backlight",
         "battery",
-        "power-profiles-daemon",
-        "group/conn",
-        "custom/power",
+        "bluetooth",
+        "network",
     ],
 
-    "hyprland/workspaces": {
-        "format": "{name}",
-    },
-    "hyprland/window": {
-        "format": "{title}",
-        "icon": false,
+    // Module configurations
+    "clock": {
+        "interval": 30,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %d %b %G}",
+        "tooltip": false,
     },
     "tray": {
-        "icon-size": 16,
+        "icon-size": 18,
         "spacing": 15,
     },
-    "cpu": {
-        "format": "󰍹  {usage}%",
-        "on-click": "alacritty -e btop",
-    },
-    "memory": {
-        "format": " {percentage}%",
-        "on-click": "alacritty -e btop",
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "",
-        "format-source-muted": " ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": " ",
-        },
-        "scroll-step": 5.0,
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", // mute sound
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", // mute mic
-        "on-click-middle": "pwvucontrol",
+    "bluetooth": {
+        "format": "󰂯",
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "wezterm -e bluetoothctl",
+        "tooltip": true,
+        "tooltip-format-on": "Bluetooth On",
+        "tooltip-format-off": "Bluetooth Off",
+        "tooltip-format-connected": "Connected to {num_connections} devices",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_battery_percentage})\t{device_address}"
     },
     "network": {
-        "format": "{ifname}",
         "format-wifi": "󰖩 ",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 ",
-        "tooltip-format": "Connected to {essid}\nIP: {ipaddr}\nGW: {gwaddr}\nIF: {ifname}",
-        "on-click": "alacritty -e nmtui",
+        "on-click": "wezterm -e nm-tui",
+        "tooltip-format-wifi": "Connected to wifi {essid}",
+        "tooltip-format-ethernet": "Connected to ethernet\nGateway: {gwaddr}",
+        "tooltip-format-disconnected": "Not connected to the internet",
     },
-    "bluetooth": {
-        "format": "󰂯{status}",
-        "format-off": "󰂲",
-        "format-on": "󰂯",
-        "format-connected": "󰂱",
-        "tooltip-format-off": "Bluetooth off",
-        "tooltip-format-on": "Bluetooth on",
-        "tooltip-format-connected": "Connected to {num_connections}\n{device_enumerate}",
-        "on-click": "bluetoothctl power on",
-        "on-click-right": "bluetoothctl power off",
-        "on-click-middle": "alacritty -e bluetoothctl",
-    },
-    "backlight": {
-        "format": "󰃟 {percent}%",
-        "scroll-step": 5,
-        "tooltip-format": "Brightness level"
-    },
+
     "battery": {
-        "states": {
-            "good": 95,
-            "warning": 20,
-            "critical": 10,
-        },
-        "interval": 30,
-        "format": "{icon} {capacity}%",
-        "format-charging": "{icon}󱐋 {capacity}%",
-        "format-plugged": "{icon}󰚥 {capacity}%",
-        "format-icons": ["󱊡", "󱊢", "󱊣"],
-        "tooltip-format": "Drawing {power}W\n{timeTo}",
-    },
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "format": "BAT: {capacity}%",
         "tooltip": true,
-        "format-icons": {
-            "default": " ",
-            "performance": " ",
-            "balanced": " ",
-            "power-saver": " "
-        }
-    },
-    "clock": {
-        "format": "󰥔 {:%R}",
-        "tooltip": false,
-        "format-alt": " {:%a, %d %b, %Y}",
+        "tooltip-format": "Draw:\t\t{power}W\nHealth:\t{health}%"
     },
 
-    "group/conn": {
-        "orientation": "horizontal",
-        "modules": ["network", "bluetooth"],
+    "pulseaudio": {
+        "format": "VOL: {volume}%",
+        "format-muted": "VOL: MUTE",
+        "scroll-step": 5.0,
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
 
-    "custom/power": {
-        "format" : "⏻ ",
-        "tooltip": false,
-        // "menu": "on-click",
-        // "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        // "menu-actions": {
-        //     "shutdown": "shutdown",
-        //     "reboot": "reboot",
-        //     "suspend": "systemctl suspend",
-        //     "hibernate": "systemctl hibernate"
-        // }
+    "backlight": {
+        "format": "BRI: {percent}%",
+        "scroll-step": 5.0
+    },
+
+    "memory": {
+        "format": "MEM: {percentage}%",
+        "on-click": "wezterm -e btop",
+        "tooltip": true,
+        "tooltip-format": "Memory:\t{used}GiB / {total}GiB\nSwap:\t\t{swapUsed}GiB / {swapTotal}GiB"
     }
+
+  //   "custom/power": {
+  //       "format" : "⏻ ",
+		// "tooltip": false,
+		// "menu": "on-click",
+		// "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		// "menu-actions": {
+		// 	"shutdown": "shutdown",
+		// 	"reboot": "reboot",
+		// 	"suspend": "systemctl suspend",
+		// 	"hibernate": "systemctl hibernate"
+		// }
+  //   }
 }
