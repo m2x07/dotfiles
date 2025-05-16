@@ -2,54 +2,9 @@
 
 # Exit on any errors
 set -e
+set -x
 
-print_logo() {
-    cat << "EOF"
-    ____              __       __                          __
-   / __ )____  ____  / /______/ /__________ _____    _____/ /_
-  / __  / __ \/ __ \/ __/ ___/ __/ ___/ __ `/ __ \  / ___/ __ \
- / /_/ / /_/ / /_/ / /_(__  / /_/ /  / /_/ / /_/ _ (__  / / / /
-/_____/\____/\____/\__/____/\__/_/   \__,_/ .___(_/____/_/ /_/
-                                         /_/
---> System setup script (Arch Linux)
---> AUR and Flatpak packages included
-EOF
-}
-print_logo
-echo -e "--> by \e[1;36mm2x07\e[0m\n"
-
-# Define red colored ERROR label to use throught the script
-ERRSTR="\e[1;31m--- ERROR:\e[0m"
-
-if [[ "$(whoami)" == "root" ]]; then
-    echo -e "$ERRSTR \e[1;31mroot\e[0m user detected! DO NOT run this script as root\n"
-    exit 1
-fi
-
-# Return if the script is ran on a non archlinux system
-if ! command -v pacman &>/dev/null; then
-    echo -e "$ERRSTR command 'pacman' not available. Are you on Arch linux?\n"
-    exit 1
-else
-    # Refresh package db and install most essential tools
-    echo -e "--- Running package refresh\n"
-    # sudo pacman -Syy
-    sudo pacman -S --needed --noconfirm git base-devel
-fi
-
-# Installing yay, an AUR helper
-if ! command -v yay &>/dev/null; then
-    echo -e "\n--- Installing AUR helper 'yay'\n"
-    cd /opt
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si --noconfirm
-    cd - # go back to the directory you were in before
-else
-    echo -e "\n--- AUR helper 'yay' is already available, continuing\n"
-fi
-
-# Packages to install from archlinux repository
+# Define variables
 PACKAGES=(
 # System
 zsh
@@ -96,19 +51,37 @@ noto-fonts
 noto-fonts-emoji
 noto-fonts-cjk
 )
-
-# Install all packages defined in PACKAGES array
-# existing packages will be upgraded
-echo -e "--- Installing packages using yay\n"
-yay -S --needed --noconfirm ${PACKAGES[@]}
-
-# declare -a ERR_STACK
-ERR_STACK=()
-if [[ $? -gt 0 ]]; then
-    ERR_STACK+=("Error(s) occoured while running yay. exit code ${?}")
-fi
-
-# Packages to install from flatpak
+HYPRLAND_PACKAGES=(
+alacritty
+dolphin
+hyprland
+hyprpaper
+hyprshot
+hyprpicker
+xdg-desktop-portal-hyprland
+hyprpolkitagent
+hyprsysteminfo
+hyprland-qtutils
+waybar
+wofi
+dunst
+wlogout
+ly
+imv
+brightnessctl
+qt5-wayland
+qt5-wayland
+qt5ct
+qt6ct-kde
+nwg-look
+kvantum
+breeze
+breeze-icons
+ttf-hack
+inter-fonts
+archlinux-xdg-menu
+papirus-icon-theme
+)
 FLATPAKS=(
 com.mattjakeman.ExtensionManager
 com.rafaelmardojai.Blanket
@@ -121,6 +94,62 @@ io.missioncenter.MissionCenter
 com.obsproject.Studio
 org.telegram.desktop
 )
+ERRSTR="\e[1;31m--- ERROR:\e[0m"        # Define a red error label
+ERR_STACK=()                            # Declare an empty error stack
+
+print_logo() {
+    cat << "EOF"
+    ____              __       __                          __
+   / __ )____  ____  / /______/ /__________ _____    _____/ /_
+  / __  / __ \/ __ \/ __/ ___/ __/ ___/ __ `/ __ \  / ___/ __ \
+ / /_/ / /_/ / /_/ / /_(__  / /_/ /  / /_/ / /_/ _ (__  / / / /
+/_____/\____/\____/\__/____/\__/_/   \__,_/ .___(_/____/_/ /_/
+                                         /_/
+--> System setup script (Arch Linux)
+--> AUR and Flatpak packages included
+EOF
+}
+print_logo
+echo -e "--> by \e[1;36mm2x07\e[0m\n"
+
+if [[ "$(whoami)" == "root" ]]; then
+    echo -e "$ERRSTR \e[1;31mroot\e[0m user detected! DO NOT run this script as root\n"
+    exit 1
+fi
+
+# Return if the script is ran on a non archlinux system
+if ! command -v pacman &>/dev/null; then
+    echo -e "$ERRSTR command 'pacman' not available. Are you on Arch linux?\n"
+    exit 1
+else
+    # Refresh package db and install most essential tools
+    echo -e "--- Running package refresh\n"
+    # sudo pacman -Syy
+    sudo pacman -Syy --needed --noconfirm git base-devel
+fi
+
+# Installing yay, an AUR helper
+if ! command -v yay &>/dev/null; then
+    PWD=$(pwd)
+    echo -e "\n--- Installing AUR helper 'yay'\n"
+    cd /opt
+    git clone https://aur.archlinux.org/yay.git
+    chown -R $USER:$USER ./yay
+    cd yay
+    makepkg -si --noconfirm
+    cd $PWD # go back to the directory you were in before
+else
+    echo -e "\n--- AUR helper 'yay' is already available, continuing\n"
+fi
+
+# Install all packages defined in PACKAGES array
+# existing packages will be upgraded
+echo -e "--- Installing packages using yay\n"
+yay -S --needed --noconfirm ${PACKAGES[@]}
+
+if [[ $? -gt 0 ]]; then
+    ERR_STACK+=("Error(s) occoured while running yay. exit code ${?}")
+fi
 
 echo -e "\n--- Installing flatpak packages\n"
 
@@ -143,6 +172,33 @@ done
 cd $HOME/.dotfiles
 stow --target $HOME .
 cd - &>/dev/null
+
+# If hyprland argument is provided to the script, install packages for hyprland
+# and configure few other things
+if [ "$1" == "hyprland" ]; then
+    echo -e "--- Hyprland flag provided"
+    echo -e "--- Installing Hyprland and other packages for it"
+    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES[@]}
+
+    if [[ $? -gt 0 ]]; then
+        ERR_STACK+=("Error(s) occoured while installing hyprland packages. exit code ${?}")
+    fi
+
+    echo "--- Uninstalling flatpaks unnecssary for hyprland"
+    flatpak uninstall com.mattjakeman.ExtensionManager
+    flatpak uninstall com.github.finefindus.eyedropper
+
+    # vscode/vscodium sets itself as default app for inode/directory mimetype 
+    # for some reason
+    xdg-mime default org.kde.dolphin.desktop inode/directory
+    xdg-mime default imv.desktop image/png
+    xdg-mime default imv.desktop image/jpeg
+
+    # enable a display manager (login manager), LY in our case
+    systemctl enable ly.service
+    echo -e "\n\e[1;32mHyprland installation complete\e[0m"
+    echo -e "Please run 'hyprctl reload' if display resolution or fonts are not rendered properly"
+fi
 
 echo -e "\n\e[1;32mFinished\e[0m running! Please recheck script output for any error(s)\n"
 
