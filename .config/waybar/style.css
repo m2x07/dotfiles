@@ -33,7 +33,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    background: rgba(0,0,0,0.5);
+    background: transparent;
     transition: none;
     box-shadow: none;
     text-shadow: none;

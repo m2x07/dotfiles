@@ -52,35 +52,36 @@
         "format-wifi": "󰖩 ",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 ",
-        "on-click": "alacritty -e nm-tui",
+        "on-click": "alacritty -e nmtui",
         "tooltip-format-wifi": "Connected to wifi {essid}",
         "tooltip-format-ethernet": "Connected to ethernet\nGateway: {gwaddr}",
         "tooltip-format-disconnected": "Not connected to the internet",
     },
 
     "battery": {
-        "format": "BAT: {capacity}%",
+        "format": "BAT: {capacity}",
         "tooltip": true,
-        "tooltip-format": "Draw:\t\t{power}W\nHealth:\t{health}%"
+        "tooltip-format": "Draw\t:\t{power}W\nHealth\t:\t{health}%"
     },
 
     "pulseaudio": {
-        "format": "VOL: {volume}%",
+        "format": "VOL: {volume}",
         "format-muted": "VOL: MUTE",
         "scroll-step": 5.0,
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
 
     "backlight": {
-        "format": "BRI: {percent}%",
-        "scroll-step": 5.0
+        "format": "BRI: {percent}",
+        "scroll-step": 5.0,
+        "tooltip-format": "Brightness: {percent}%"
     },
 
     "memory": {
-        "format": "MEM: {percentage}%",
+        "format": "MEM: {used}GiB",
         "on-click": "alacritty -e btop",
         "tooltip": true,
-        "tooltip-format": "Memory:\t{used}GiB / {total}GiB\nSwap:\t\t{swapUsed}GiB / {swapTotal}GiB"
+        "tooltip-format": "Memory\t:\t{used}GiB / {total}GiB ({percentage}%)\nSwap\t:\t{swapUsed}GiB / {swapTotal}GiB"
     }
 
   //   "custom/power": {
