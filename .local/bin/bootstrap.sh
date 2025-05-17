@@ -196,6 +196,11 @@ if [ "$1" == "hyprland" ]; then
     flatpak uninstall com.mattjakeman.ExtensionManager
     flatpak uninstall com.github.finefindus.eyedropper
 
+    # Enable dark theme for flatpak apps
+    cp $HOME/.themes
+    cp -r /usr/share/themes/adw-gtk3-dark ~/.themes/
+    flatpak override --user --env=GTK_THEME=adw-gtk3-dark
+
     # vscode/vscodium sets itself as default app for inode/directory mimetype 
     # for some reason
     xdg-mime default org.kde.dolphin.desktop inode/directory
