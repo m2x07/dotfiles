@@ -2,7 +2,12 @@
 
 # Exit on any errors
 set -e
-set -x
+
+if [ $2 == "debug" ]; then
+    set -x
+    echo -e "--- RUNNING IN DEBUG MODE"
+    echo -e "--- All command will be printed to console before being executed"
+fi
 
 # Define variables
 PACKAGES=(
@@ -58,6 +63,8 @@ hyprland
 hyprpaper
 hyprshot
 hyprpicker
+hyprlock
+hyprsunset
 xdg-desktop-portal-hyprland
 hyprpolkitagent
 hyprsysteminfo
