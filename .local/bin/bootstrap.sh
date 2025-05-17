@@ -84,6 +84,7 @@ nwg-look
 kvantum
 breeze
 breeze-icons
+gnome-themes-extra
 ttf-hack
 inter-fonts
 archlinux-xdg-menu

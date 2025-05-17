@@ -145,7 +145,7 @@
     ### Text ###
 
     # font = Noto Sans,Normal Regular 11
-    font = Inter Variable,Normal Regular 11
+    font = Adwaita Sans,Normal Regular 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
