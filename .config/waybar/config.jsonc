@@ -42,6 +42,7 @@
         "format-off": "󰂲",
         "format-connected": "󰂱",
         "on-click": "alacritty -e bluetoothctl",
+        "on-click-right": "bluetoothctl power off",
         "tooltip": true,
         "tooltip-format-on": "Bluetooth On",
         "tooltip-format-off": "Bluetooth Off",
@@ -68,6 +69,7 @@
     "pulseaudio": {
         "format": "VOL: {volume}",
         "format-muted": "VOL: MUTE",
+        "format-source-muted": "VOL: {volume} ",
         "scroll-step": 5.0,
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
