@@ -16,7 +16,7 @@ news.version=3.4.1
 # include dark-256.theme
 # include dark-red-256.theme
 # include dark-green-256.theme
-include dark-blue-256.theme
+# include dark-blue-256.theme
 # include dark-violets-256.theme
 # include dark-yellow-green.theme
 #include dark-gray-256.theme

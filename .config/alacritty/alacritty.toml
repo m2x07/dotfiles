@@ -9,7 +9,7 @@ draw_bold_text_with_bright_colors = false
 blinking = "On"
 
 [font]
-size = 10
+size = 11.5
 offset = {x = 0, y = 2}
 
 [font.bold]
@@ -42,8 +42,9 @@ dimensions = {columns = 115, lines = 30}
 [general]
 import = [
     # "~/.config/alacritty/colors/m2x07-emarald-glow.toml"
-    "~/.config/alacritty/colors/m2x07-noir.toml"
+    # "~/.config/alacritty/colors/m2x07-noir.toml"
     # "~/.config/alacritty/colors/catppuccin-macchiato.toml"
     # "~/.config/alacritty/colors/catppuccin-mocha.toml"
+    "~/.config/alacritty/colors/cyberdream.toml"
 ]
 

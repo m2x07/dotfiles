@@ -13,9 +13,10 @@ config.color_scheme = "Noir"
 -- config.color_scheme = 'Abernathy'
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
+config.colors = require('cyberdream')
 
 config.font = wez.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
-config.font_size = 10
+config.font_size = 11.5
 config.line_height = 1.1
 config.harfbuzz_features = { "calt=0", "liga=0", "clig=0" }
 config.freetype_interpreter_version = 35
