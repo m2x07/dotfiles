@@ -46,7 +46,7 @@ zinit cdreplay -q
 
 # ENV Exports
 export AUTO_NOTIFY_THRESHOLD=10
-AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat" "gpg" "gpg2" "ping" "waybar" "imv" "wlogout" "zathura")
+AUTO_NOTIFY_IGNORE+=("docker" "weechat" "npm run dev" "npm start" "cava" "bat" "gpg" "gpg2" "ping" "waybar" "imv" "wlogout" "zathura" "lazygit")
 
 # Keybinds
 bindkey -e
