@@ -48,6 +48,7 @@ fastfetch
 starship
 adw-gtk-theme
 # Fonts
+# also install Maple Mono from github
 ttf-cascadia-mono-nerd
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
@@ -77,7 +78,7 @@ ly
 imv
 brightnessctl
 qt5-wayland
-qt5-wayland
+qt6-wayland
 qt5ct
 qt6ct-kde
 nwg-look

@@ -1,7 +1,6 @@
 * {
     border: none;
     border-radius: 0;
-    /* font-family: "JetBrainsMonoNL Nerd Font"; */
     font-family: "Adwaita Sans";
     font-weight: 500;
     font-size: 14px;
@@ -62,7 +61,7 @@ tooltip label {
 }
 
 #custom-power {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .modules-right {

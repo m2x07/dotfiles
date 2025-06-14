@@ -10,7 +10,7 @@ dangerously_accept_invalid_certs = true
 alt_nicks = ["_m2x07", "__m2x07"]
 
 [font]
-family = "JetBrainsMonoNL Nerd Font"
+family = "Maple Mono NL NF CN"
 
 [sidebar]
 buffer_action = "replace-pane"
