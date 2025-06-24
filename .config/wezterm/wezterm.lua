@@ -13,7 +13,6 @@ config.color_scheme = "Noir"
 -- config.color_scheme = 'Abernathy'
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
-config.colors = require('cyberdream')
 
 config.font = wez.font("Maple Mono NL NF CN", { weight = "Regular" })
 config.font_size = 11.5

@@ -1,26 +1,26 @@
 [colors.primary]
 background = '#101010'
-foreground = '#ffffff'
+foreground = '#FFFFFF'
 
 [colors.normal]
-black=   '#241f31'
-red = '#e80e33'
-green = '#31dc8d'
-yellow = '#f5da11'
-blue = '#2d86f3'
-magenta = '#f822c2'
-cyan = '#24dbef'
-white = '#e2e2e2'
+black = '#241F31'
+red = '#EF3453'
+green = '#58EF7E'
+yellow = '#F5DA11'
+blue = '#2D86F3'
+magenta = '#F822C2'
+cyan = '#24DBEF'
+white = '#E2E2E2'
 
 [colors.bright]
-black=   '#5e5c64'
-red = '#e80e33'
-green = '#31dc8d'
-yellow = '#f5da11'
-blue = '#2d86f3'
-magenta = '#f822c2'
-cyan = '#24dbef'
-white = '#ffffff'
+black = '#5E5C64'
+red = '#EF3453'
+green = '#58EF7E'
+yellow = '#F5DA11'
+blue = '#2D86F3'
+magenta = '#F822C2'
+cyan = '#24DBEF'
+white = '#FFFFFF'
 
 [window]
 opacity = 1
