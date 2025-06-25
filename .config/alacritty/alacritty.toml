@@ -15,19 +15,19 @@ size = 11.5
 offset = {x = 0, y = 0}
 
 [font.bold]
-family = "Maple Mono NL NF CN"
+family = "Maple Mono NF CN"
 style = "Bold"
 
 [font.bold_italic]
-family = "Maple Mono NL NF CN"
+family = "Maple Mono NF CN"
 style = "SemiBold Italic"
 
 [font.italic]
-family = "Maple Mono NL NF CN"
+family = "Maple Mono NF CN"
 style = "Italic"
 
 [font.normal]
-family = "Maple Mono NL NF CN"
+family = "Maple Mono NF CN"
 style = "Regular"
 
 [scrolling]

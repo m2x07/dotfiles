@@ -14,7 +14,7 @@ config.color_scheme = "Noir"
 -- config.color_scheme = 'Aci (Gogh)'
 -- config.color_scheme = 'Argonaut'
 
-config.font = wez.font("Maple Mono NL NF CN", { weight = "Regular" })
+config.font = wez.font("Maple Mono NF CN", { weight = "Regular" })
 config.font_size = 11.5
 config.line_height = 1
 config.harfbuzz_features = { "calt=0", "liga=0", "clig=0" }

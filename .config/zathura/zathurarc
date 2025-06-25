@@ -2,5 +2,5 @@ unmap <C-r>
 map <C-i> recolor
 set completion-highlight-bg "#2b5ce2"
 set default-bg "#383838"
-set font "Maple Mono NL NF CN"
+set font "Maple Mono NF CN"
 set show-recent 5

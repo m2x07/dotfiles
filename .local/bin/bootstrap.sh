@@ -49,7 +49,6 @@ starship
 adw-gtk-theme
 # Fonts
 # also install Maple Mono from github
-ttf-cascadia-mono-nerd
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
 ttf-roboto
