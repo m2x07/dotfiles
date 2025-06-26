@@ -14,21 +14,21 @@ blink_timeout = 0
 size = 11.5
 offset = {x = 0, y = 0}
 
+[font.normal]
+family = "Maple Mono NF CN"
+style = "Regular"
+
 [font.bold]
 family = "Maple Mono NF CN"
 style = "Bold"
-
-[font.bold_italic]
-family = "Maple Mono NF CN"
-style = "SemiBold Italic"
 
 [font.italic]
 family = "Maple Mono NF CN"
 style = "Italic"
 
-[font.normal]
+[font.bold_italic]
 family = "Maple Mono NF CN"
-style = "Regular"
+style = "SemiBold Italic"
 
 [scrolling]
 multiplier = 3
