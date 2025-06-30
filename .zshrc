@@ -39,6 +39,16 @@ zinit load zsh-users/zsh-autosuggestions
 zinit load MichaelAquilina/zsh-you-should-use
 zinit load MichaelAquilina/zsh-auto-notify
 
+# Shell Customizations
+
+# use blue color highlighting for valid commands
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=green'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=green'
+
 autoload -U compinit && compinit
 _comp_options+=(globdots)
 
