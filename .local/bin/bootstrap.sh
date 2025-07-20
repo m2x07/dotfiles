@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 
-# Exit on any errors
+# exit on any errors
 set -e
 
-if [ $2 == "debug" ]; then
-    set -x
-    echo -e "--- RUNNING IN DEBUG MODE"
-    echo -e "--- All command will be printed to console before being executed"
-fi
-
-# Define variables
+# define list of packages to install
 PACKAGES=(
-# System
+# system
 zsh
 man
 wezterm
@@ -28,7 +22,7 @@ stow
 libreoffice-fresh
 zen-browser-bin
 firefox
-# Development
+# development
 vim
 neovim
 bat
@@ -47,9 +41,8 @@ neofetch
 fastfetch
 starship
 adw-gtk-theme
-# Fonts
+# fonts
 # also install Maple Mono from github
-ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
 ttf-roboto
 noto-fonts
@@ -102,8 +95,6 @@ io.missioncenter.MissionCenter
 com.obsproject.Studio
 org.telegram.desktop
 )
-ERRSTR="\e[1;31m--- ERROR:\e[0m"        # Define a red error label
-ERR_STACK=()                            # Declare an empty error stack
 
 print_logo() {
     cat << "EOF"
@@ -120,105 +111,85 @@ EOF
 print_logo
 echo -e "--> by \e[1;36mm2x07\e[0m\n"
 
+ERRSTR="\e[1;31m--- ERROR:\e[0m"    # define a red error label
+
+# terminate if script is ran as root user
 if [[ "$(whoami)" == "root" ]]; then
-    echo -e "$ERRSTR \e[1;31mroot\e[0m user detected! DO NOT run this script as root\n"
+    echo -e "$ERRSTR DO NOT run this script as root"
     exit 1
 fi
 
-# Return if the script is ran on a non archlinux system
+# terminate if script is ran on a non archlinux system
 if ! command -v pacman &>/dev/null; then
-    echo -e "$ERRSTR command 'pacman' not available. Are you on Arch linux?\n"
-    exit 1
+    echo -e "$ERRSTR command 'pacman' not available. are you sure on arch linux?"
 else
-    # Refresh package db and install most essential tools
-    echo -e "--- Running package refresh\n"
-    # sudo pacman -Syy
+    echo -e "--- running package refresh\n"
     sudo pacman -Syy --needed --noconfirm git base-devel
 fi
 
-# Installing yay, an AUR helper
+# install yay, and AUR helper
 if ! command -v yay &>/dev/null; then
-    PWD=$(pwd)
-    echo -e "\n--- Installing AUR helper 'yay'\n"
-    cd /opt
+    echo -e "--- installing AUR helper 'yay'\n"
+    PREVWD=$(pwd)
+    TMPDIR=$(mktemp -d)
+    cd "$TMPDIR"
     git clone https://aur.archlinux.org/yay.git
-    chown -R $USER:$USER ./yay
     cd yay
     makepkg -si --noconfirm
-    cd $PWD # go back to the directory you were in before
+    echo -e "--- 'yay' is cloned at $TMPDIR\n"
+    cd "$PREVWD"
 else
-    echo -e "\n--- AUR helper 'yay' is already available, continuing\n"
+    echo -e "--- 'yay' is already available, continuing\n"
 fi
 
-# Install all packages defined in PACKAGES array
-# existing packages will be upgraded
-echo -e "--- Installing packages using yay\n"
+# install all packages from the PACKAGES array
+echo -e "--- installing packages using yay\n"
 yay -S --needed --noconfirm ${PACKAGES[@]}
 
-if [[ $? -gt 0 ]]; then
-    ERR_STACK+=("Error(s) occoured while running yay. exit code ${?}")
-fi
-
-echo -e "\n--- Installing flatpak packages\n"
-
-# Install each package individually cus why not
-for pak in ${FLATPAKS[@]}; do
-    # only install if flatpak in not already installed
-    if ! flatpak list | grep -i "$pak" &>/dev/null; then
-        echo "--- Installing flatpak: ${pak}"
-        flatpak install $pak --assumeyes
-
-        if [[ $? -gt 0 ]]; then
-            ERR_STACK+=("Flatpak error. couldn't install $pak. exit code ${?}")
-        fi
+echo -e "\n--- installing flatpak packages\n"
+for pak in "${FLATPAKS[@]}"; do
+    # only install if flatpak is not already installed
+    if ! flatpak info "$pak" &>/dev/null; then
+        flatpak install "$pak" --assumeyes
     else
-        echo "--- Flatpak $pak already installed."
+        echo "--- flatpak $pak already installed. skipping"
     fi
 done
 
-# Populate dotfiles
-cd $HOME/.dotfiles
+# populate dotfiles
+cd "$HOME/.dotfiles"
 stow --target $HOME .
 cd - &>/dev/null
 
-# If hyprland argument is provided to the script, install packages for hyprland
-# and configure few other things
+# if hyprland argument is provided, setup things for hyprland
 if [ "$1" == "hyprland" ]; then
-    echo -e "--- Hyprland flag provided"
-    echo -e "--- Installing Hyprland and other packages for it"
-    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES[@]}
+    echo -e "--- configuring for hyprland\n"
+    echo -e "--- installing packages for hyprland\n"
+    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES}
 
-    if [[ $? -gt 0 ]]; then
-        ERR_STACK+=("Error(s) occoured while installing hyprland packages. exit code ${?}")
-    fi
-
-    echo "--- Uninstalling flatpaks unnecssary for hyprland"
+    echo "--- uninstalling flatpaks not needed for hyprland"
     flatpak uninstall com.mattjakeman.ExtensionManager
     flatpak uninstall com.github.finefindus.eyedropper
 
-    # Enable dark theme for flatpak apps
-    cp $HOME/.themes
+    # enable dark theme for flatpak apps
+    mkdir -p $HOME/.themes
+    # copy theme to home directory so flatpaks can access it
     cp -r /usr/share/themes/adw-gtk3-dark ~/.themes/
     flatpak override --user --env=GTK_THEME=adw-gtk3-dark
 
-    # vscode/vscodium sets itself as default app for inode/directory mimetype 
-    # for some reason
+    # vscode/vscodium sets itself as default app for inode/directory mimetype
+    # for some reason. correct that
     xdg-mime default org.kde.dolphin.desktop inode/directory
+
+    # set default app for image
     xdg-mime default imv.desktop image/png
     xdg-mime default imv.desktop image/jpeg
 
-    # enable a display manager (login manager), LY in our case
+    # enable a display (login) manager. 'ly' in our case
     systemctl enable ly.service
-    echo -e "\n\e[1;32mHyprland installation complete\e[0m"
-    echo -e "Please run 'hyprctl reload' if display resolution or fonts are not rendered properly"
+    echo -e "--- hyprland installation complete"
+    echo -e "--- make sure to run 'hyprctl reload' later"
 fi
 
-echo -e "\n\e[1;32mFinished\e[0m running! Please recheck script output for any error(s)\n"
-
-# Print collected errors for user
-if [[ ${#ERR_STACK} -gt 0 ]]; then
-    echo -e "--- ERROR STACK (${#ERR_STACK}):\n"
-    for err in ${ERR_STACK[@]}; do
-        echo -e "\t$err"
-    done
-fi
+# print out final message after finishing the script
+echo -e "\e[1;32mfinished running! please recheck script output for any error(s)\e[0m\n"
