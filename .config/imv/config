@@ -8,6 +8,7 @@ scaling_mode = shrink
 
 [aliases]
 delete = exec rm "$imv_current_file"
+wallp = exec hyprctl hyprpaper reload eDP-1,"$imv_current_file"
 
 [binds]
 <Ctrl+d> = exec rm "$imv_current_file"; next

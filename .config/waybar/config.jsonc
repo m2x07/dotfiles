@@ -69,9 +69,11 @@
     "pulseaudio": {
         "format": "VOL: {volume}",
         "format-muted": "VOL: MUTE",
+        "format-source": "VOL: {volume}",
         "format-source-muted": "VOL: {volume} ",
         "scroll-step": 5.0,
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
     },
 
     "backlight": {

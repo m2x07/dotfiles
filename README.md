@@ -29,11 +29,4 @@ stow --target $HOME .
 stow --target $HOME --delete .
 ```
 
-it is recommneded to install these fonts: \
-(this step is already covered by our bootstrap script)
-
-```bash
-sudo pacmam -S ttf-jetbrains-mono-nerd ttf-cascadia-mono-nerd
-```
-
 documentation for stow: https://www.gnu.org/software/stow/manual/stow.html
