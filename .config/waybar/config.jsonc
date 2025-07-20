@@ -51,6 +51,7 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias} ({device_battery_percentage})\t{device_address}"
     },
     "network": {
+        "format": "󱚵 ",
         "format-wifi": "󰖩 ",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 ",

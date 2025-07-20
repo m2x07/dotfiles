@@ -189,6 +189,11 @@ if [ "$1" == "hyprland" ]; then
     systemctl enable ly.service
     echo -e "--- hyprland installation complete"
     echo -e "--- make sure to run 'hyprctl reload' later"
+
+    # enable battery level notifier service
+    systemctl --user daemon-reexec
+    systemctl --user daemon-reload
+    systemctl --user enable --now battery_notifier.timer
 fi
 
 # print out final message after finishing the script

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run battery notifier every 2 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=2min
+Unit=battery_notify.service
+
+[Install]
+WantedBy=timers.target

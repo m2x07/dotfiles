@@ -1,0 +1,6 @@
+[Unit]
+Description=Battery level notifier script
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/battery_notify.sh
