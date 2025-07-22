@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Adwaita Sans";
+    font-family: "Maple Mono NF CN";
     font-weight: 500;
     font-size: 14px;
 }
@@ -44,7 +44,7 @@ tooltip label {
 }
 
 #bluetooth {
-    font-size: 18px;
+    font-size: 16px;
 }
 #bluetooth.connected {
     color: white;
@@ -54,14 +54,14 @@ tooltip label {
 }
 
 #network {
-    font-size: 18px;
+    font-size: 16px;
 }
 #network.disconnected, #network.disabled {
     color: rgba(255,255,255,0.6);
 }
 
 #custom-power {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .modules-right {

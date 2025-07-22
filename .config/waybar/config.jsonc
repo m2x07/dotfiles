@@ -2,8 +2,8 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
-    "spacing": 20,
+    "height": 30,
+    "spacing": 15,
     "reload_style_on_change": true,
 
     // Choose the order of the modules
