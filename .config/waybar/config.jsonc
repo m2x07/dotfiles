@@ -28,8 +28,8 @@
     // Module configurations
     "clock": {
         "interval": 30,
-        "format": "{:%H:%M}",
-        "format-alt": "{:%a %d %b %G}",
+        "format": "{:%d %b %H:%M}",
+        "format-alt": "{:%A %d %b %G}",
         "tooltip": false,
     },
     "tray": {
