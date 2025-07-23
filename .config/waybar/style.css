@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background: rgba(0,0,0,0.5);
+    background: rgba(15,15,15,1);
     color: rgba(225,225,225,1);
 }
 
@@ -21,21 +21,27 @@ tooltip label {
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 5px;
+    margin: 4px 2px;
     background: transparent;
-    color: rgba(255,255,255,0.6);
+    color: rgba(130,130,130,1);
+    border-radius: 4px;
 }
 
 #workspaces button.active {
-    background: none;
+    /* background: rgba(60,60,60,1); */
+    background: rgba(21,82,143,1);      /* cyan accent color */
     color: white;
 }
 
 #workspaces button:hover {
-    background: transparent;
     transition: none;
     box-shadow: none;
     text-shadow: none;
+}
+
+#clock {
+    margin: 0px 20px;
 }
 
 #tray menu {
@@ -50,14 +56,14 @@ tooltip label {
     color: white;
 }
 #bluetooth.off {
-    color: rgba(255,255,255,0.6);
+    color: rgba(130,130,130,1);
 }
 
 #network {
     font-size: 16px;
 }
 #network.disconnected, #network.disabled {
-    color: rgba(255,255,255,0.6);
+    color: rgba(130,130,130,1);
 }
 
 #custom-power {
