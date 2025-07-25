@@ -75,6 +75,7 @@ qt5ct
 qt6ct-kde
 nwg-look
 kvantum
+kvantum-qt5
 breeze
 breeze-icons
 gnome-themes-extra
