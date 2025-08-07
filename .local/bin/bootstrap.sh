@@ -71,7 +71,7 @@ imv
 brightnessctl
 qt5-wayland
 qt6-wayland
-qt5ct
+qt5ct-kde
 qt6ct-kde
 nwg-look
 kvantum

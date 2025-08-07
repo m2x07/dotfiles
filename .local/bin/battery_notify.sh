@@ -9,5 +9,5 @@ if [ "$STATUS" == "Discharging" ] && [ "$CAPACITY" -le 20 ]; then
 elif [ "$STATUS" == "Discharging" ] && [ "$CAPACITY" -le 10 ]; then
     notify-send -a "battery_notify.sh" -u critical "Battery level critical: ${CAPACITY}%" "Plug in a power source now"
 elif [ "$STATUS" == "Charging" ] && [ "$CAPACITY" -gt 97 ]; then
-    notify-send -a "battery_notify.sh" -u normal "Fully charged" "You may now unplug the charger"
+    notify-send -a "battery_notify.sh" -u normal "Battery fully charged" "You may now unplug the charger"
 fi
