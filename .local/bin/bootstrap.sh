@@ -85,10 +85,8 @@ papirus-icon-theme
 FLATPAKS=(
 com.mattjakeman.ExtensionManager
 com.rafaelmardojai.Blanket
-com.github.finefindus.eyedropper
 com.github.tchx84.Flatseal
 io.gitlab.adhami3310.Impression
-org.gnome.World.Iotas
 fr.romainvigier.MetadataCleaner
 io.missioncenter.MissionCenter
 com.obsproject.Studio
