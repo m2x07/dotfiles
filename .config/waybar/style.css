@@ -49,8 +49,25 @@ tooltip label {
     background: black;
 }
 
+#memory {
+    color: #37a352;
+}
+
+#pulseaudio {
+    color: #7e49fc;
+}
+
+#backlight {
+    color: #c9bb22;
+}
+
+#battery {
+    color: #f45378;
+}
+
 #bluetooth {
     font-size: 16px;
+    color: #3771ef;
 }
 #bluetooth.connected {
     color: white;
@@ -61,6 +78,7 @@ tooltip label {
 
 #network {
     font-size: 16px;
+    color: #3771ef;
 }
 #network.disconnected, #network.disabled {
     color: rgba(130,130,130,1);
@@ -68,8 +86,10 @@ tooltip label {
 
 #custom-power {
     font-size: 16px;
+    /* color: #f45378; */
 }
 
 .modules-right {
     padding: 0 10px 0 0;
+    color: inherit;
 }
