@@ -37,7 +37,7 @@ history = 10000
 [window]
 # padding = {x = 5, y = 0 }
 title = "Alacritty"
-decorations = "Full"
+decorations = "full"
 dynamic_title = true
 dimensions = {columns = 115, lines = 30}
 

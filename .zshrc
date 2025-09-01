@@ -36,7 +36,7 @@ source "$ZINIT_HOME/zinit.zsh"
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
-zinit load MichaelAquilina/zsh-you-should-use
+# zinit load MichaelAquilina/zsh-you-should-use
 zinit load MichaelAquilina/zsh-auto-notify
 
 # Shell Customizations
