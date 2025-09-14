@@ -40,6 +40,7 @@
     border-width: 0px;
     outline: none;
     padding: 0;
+    margin: 0px 1px;
 }
 
 #unselected {
@@ -48,7 +49,8 @@
 
 #selected {
     padding: 10px 25px;
-    background-color: #0071E3;
+    /* background-color: #0071E3; */
+    background-color: #262626;
     color: #fff;
     border-radius: 0px;
 }
