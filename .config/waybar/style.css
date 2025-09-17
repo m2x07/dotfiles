@@ -30,7 +30,7 @@ tooltip label {
 
 #workspaces button.active {
     /* background: rgba(60,60,60,1); */
-    background: rgba(31, 111, 191, 1);      /* cyan accent color */
+    background: rgba(21,82,143,1);      /* cyan accent color */
     color: white;
 }
 

@@ -10,7 +10,6 @@ zsh
 man
 wezterm
 btop
-htop
 zip
 unzip
 wget
@@ -55,6 +54,7 @@ dolphin
 hyprland
 hyprpaper
 hyprshot
+flameshot
 hyprpicker
 hyprlock
 hyprsunset
@@ -179,8 +179,8 @@ if [ "$1" == "hyprland" ]; then
     xdg-mime default org.kde.dolphin.desktop inode/directory
 
     # set default app for image
-    xdg-mime default imv.desktop image/png
-    xdg-mime default imv.desktop image/jpeg
+    xdg-mime default imv-dir.desktop image/png
+    xdg-mime default imv-dir.desktop image/jpeg
 
     # enable a display (login) manager. 'ly' in our case
     systemctl enable ly.service
