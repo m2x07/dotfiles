@@ -38,6 +38,8 @@ zinit load zsh-users/zsh-completions
 zinit load zsh-users/zsh-autosuggestions
 # zinit load MichaelAquilina/zsh-you-should-use
 zinit load MichaelAquilina/zsh-auto-notify
+zinit ice silent wait'!0'
+zinit snippet OMZ::plugins/nvm/nvm.plugin.zsh
 
 # Shell Customizations
 
@@ -75,9 +77,9 @@ zstyle ":completion:*" menu select
 GPG_TTY=$(tty)
 export GPG_TTY
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ## Aliases
 alias ls="lsd --group-directories-first"
