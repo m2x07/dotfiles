@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background: rgba(15,15,15,1);
+    background: rgba(20,20,20,1);
     color: rgba(225,225,225,1);
 }
 
@@ -17,7 +17,7 @@ tooltip {
   border-radius: 4px;
 }
 tooltip label {
-  color: white;
+  color: rgba(225,225,225,1);
 }
 
 #workspaces button {
@@ -29,15 +29,14 @@ tooltip label {
 }
 
 #workspaces button.active {
-    /* background: rgba(60,60,60,1); */
-    background: rgba(21,82,143,1);      /* cyan accent color */
-    color: white;
+    color: rgba(225,225,225,1);
 }
 
 #workspaces button:hover {
     transition: none;
     box-shadow: none;
     text-shadow: none;
+    background: rgba(60,60,60,1);
 }
 
 #clock {
@@ -45,32 +44,15 @@ tooltip label {
 }
 
 #tray menu {
-    color: white;
+    color: rgba(225,225,225,1);
     background: black;
-}
-
-#memory {
-    color: #37a352;
-}
-
-#pulseaudio {
-    color: #7e49fc;
-}
-
-#backlight {
-    color: #c9bb22;
-}
-
-#battery {
-    color: #f45378;
 }
 
 #bluetooth {
     font-size: 16px;
-    color: #3771ef;
 }
 #bluetooth.connected {
-    color: white;
+    color: rgba(225,225,225,1);
 }
 #bluetooth.off {
     color: rgba(130,130,130,1);
@@ -78,7 +60,6 @@ tooltip label {
 
 #network {
     font-size: 16px;
-    color: #3771ef;
 }
 #network.disconnected, #network.disabled {
     color: rgba(130,130,130,1);
@@ -86,7 +67,6 @@ tooltip label {
 
 #custom-power {
     font-size: 16px;
-    /* color: #f45378; */
 }
 
 .modules-right {
