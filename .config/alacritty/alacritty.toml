@@ -44,9 +44,9 @@ dimensions = { columns = 115, lines = 30 }
 [general]
 import = [
     # "~/.config/alacritty/colors/emarald-glow.toml"
-    "~/.config/alacritty/colors/noir.toml"
+    # "~/.config/alacritty/colors/noir.toml"
     # "~/.config/alacritty/colors/noir-soft.toml"
-    # "~/.config/alacritty/colors/tokyonight_moon.toml"
+    "~/.config/alacritty/colors/tokyonight_night.toml"
     # "~/.config/alacritty/colors/catppuccin-mocha.toml"
 ]
 
