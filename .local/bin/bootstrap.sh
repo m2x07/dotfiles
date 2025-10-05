@@ -186,11 +186,23 @@ cd "$HOME/.dotfiles"
 stow --target $HOME .
 cd - &>/dev/null
 
+# update xdg user directories
+xdg-user-dirs-update
+
 # if hyprland argument is provided, setup things for hyprland
 if [ "$1" == "hyprland" ]; then
     echo -e "--- configuring for hyprland\n"
     echo -e "--- installing packages for hyprland\n"
     yay -S --needed --noconfirm ${HYPRLAND_PACKAGES}
+
+    # install maple mono font
+    echo "--- installing maple mono font"
+    cd $(xdg-user-dir DOWNLOAD)
+    curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
+    mkdir $HOME/.fonts
+    unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts"
+    fc-cache -fv
+    cd pwd
 
     echo "--- uninstalling flatpaks not needed for hyprland"
     flatpak uninstall com.mattjakeman.ExtensionManager
