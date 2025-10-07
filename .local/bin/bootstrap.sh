@@ -5,120 +5,120 @@ set -e
 
 # define list of packages to install
 PACKAGES=(
-# system
-zsh
-man
-wezterm
-btop
-zip
-unzip
-wget
-curl
-mpv
-flatpak
-plocate
-stow
-libreoffice-fresh
-zen-browser-bin
-firefox
-# development
-vim
-neovim
-bat
-lazygit
-vscodium-bin
-# Extra
-weechat
-tealdeer
-fd
-findutils
-ripgrep
-lsd
-glow
-fzf
-neofetch
-fastfetch
-starship
-adw-gtk-theme
-# fonts
-# also install Maple Mono from github
-ttf-jetbrains-mono-nerd
-ttf-roboto
-noto-fonts
-noto-fonts-emoji
-noto-fonts-cjk
-adwaita-fonts
-github-cli
-yt-dlp
+    # system
+    zsh
+    man
+    wezterm
+    btop
+    zip
+    unzip
+    wget
+    curl
+    mpv
+    flatpak
+    plocate
+    stow
+    libreoffice-fresh
+    zen-browser-bin
+    firefox
+    # development
+    vim
+    neovim
+    bat
+    lazygit
+    vscodium-bin
+    # Extra
+    weechat
+    tealdeer
+    fd
+    findutils
+    ripgrep
+    lsd
+    glow
+    fzf
+    neofetch
+    fastfetch
+    starship
+    adw-gtk-theme
+    # fonts
+    # also install Maple Mono from github
+    ttf-jetbrains-mono-nerd
+    ttf-roboto
+    noto-fonts
+    noto-fonts-emoji
+    noto-fonts-cjk
+    adwaita-fonts
+    github-cli
+    yt-dlp
 )
 HYPRLAND_PACKAGES=(
-alacritty
-bluez
-bluez-utils
-dolphin
-hyprland
-hyprpaper
-hyprshot
-hyprpicker
-hyprlock
-hyprsunset
-hyprpolkitagent
-hyprsysteminfo
-hyprland-qtutils
-xdg-desktop-portal-hyprland
-flameshot
-waybar
-walker
-elephant
-elephant-calc
-elephant-clipboard
-elephant-desktopapplications
-elephant-providerlist
-elephant-symbols
-elephant-todo
-elephant-unicode
-elephant-runner
-dunst
-wlogout
-ly
-imv
-brightnessctl
-qt5-wayland
-qt6-wayland
-qt5ct-kde
-qt6ct-kde
-nwg-look
-breeze
-breeze-icons
-gnome-themes-extra
-ttf-hack
-inter-fonts
-archlinux-xdg-menu
-papirus-icon-theme
-zathura
-zathura-pdf-popplej
-poppler-glib
-pppler-qt6
-poppler-data
-protobuf
-cairo
-gtk4
-gtk4-layer-shell
-pipewire
-pipewire-alsa
-pipewire-audio
-pipewire-pulse
-wireplumber
+    alacritty
+    bluez
+    bluez-utils
+    dolphin
+    hyprland
+    hyprpaper
+    hyprshot
+    hyprpicker
+    hyprlock
+    hyprsunset
+    hyprpolkitagent
+    hyprsysteminfo
+    hyprland-qtutils
+    xdg-desktop-portal-hyprland
+    flameshot
+    waybar
+    walker
+    elephant
+    elephant-calc
+    elephant-clipboard
+    elephant-desktopapplications
+    elephant-providerlist
+    elephant-symbols
+    elephant-todo
+    elephant-unicode
+    elephant-runner
+    dunst
+    wlogout
+    ly
+    imv
+    brightnessctl
+    qt5-wayland
+    qt6-wayland
+    qt5ct-kde
+    qt6ct-kde
+    nwg-look
+    breeze
+    breeze-icons
+    gnome-themes-extra
+    ttf-hack
+    inter-fonts
+    archlinux-xdg-menu
+    papirus-icon-theme
+    zathura
+    zathura-pdf-popplej
+    poppler-glib
+    pppler-qt6
+    poppler-data
+    protobuf
+    cairo
+    gtk4
+    gtk4-layer-shell
+    pipewire
+    pipewire-alsa
+    pipewire-audio
+    pipewire-pulse
+    wireplumber
 )
 FLATPAKS=(
-com.mattjakeman.ExtensionManager
-com.rafaelmardojai.Blanket
-com.github.tchx84.Flatseal
-io.gitlab.adhami3310.Impression
-fr.romainvigier.MetadataCleaner
-io.missioncenter.MissionCenter
-com.obsproject.Studio
-org.telegram.desktop
+    com.mattjakeman.ExtensionManager
+    com.rafaelmardojai.Blanket
+    com.github.tchx84.Flatseal
+    io.gitlab.adhami3310.Impression
+    fr.romainvigier.MetadataCleaner
+    io.missioncenter.MissionCenter
+    com.obsproject.Studio
+    org.telegram.desktop
 )
 
 print_logo() {
