@@ -1,8 +1,8 @@
 theme = "my_default"
 
 [keybinds]
-next = "alt j"
-previous = "alt k"
+next = ["alt j"]
+previous = ["alt k"]
 
 [placeholders]
 "default" = { input = "Search applications", list = "No Results" }

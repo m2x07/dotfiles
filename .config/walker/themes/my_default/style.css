@@ -1,6 +1,8 @@
 @define-color window_bg_color #141414;
 @define-color accent_bg_color #54546d;
 @define-color theme_fg_color #e1e1e1;
+@define-color error_bg_color #C34043;
+@define-color error_fg_color #DCD7BA;
 
 * {
     all: unset;
@@ -93,14 +95,13 @@ child:selected .item-box {
     opacity: 0.5;
 }
 
-.item-image {
+.item-image,
+.item-image-text {
     margin-right: 10px;
 }
 
-.keybind-hints {
-    font-size: 12px;
-    opacity: 0.5;
-    color: @theme_fg_color;
+.item-image-text {
+    font-size: 28px;
 }
 
 .preview {
@@ -132,6 +133,34 @@ child:selected .item-box {
     font-weight: bold;
 }
 
+.bluetooth.disconnected {
+    opacity: 0.5;
+}
+
 .preview .large-icons {
     -gtk-icon-size: 64px;
+}
+
+.keybinds-wrapper {
+    border-top: 1px solid lighter(@window_bg_color);
+    font-size: 12px;
+    opacity: 0.5;
+    color: @theme_fg_color;
+}
+
+.keybinds {}
+
+.keybind {}
+
+.keybind-bind {
+    /* color: lighter(@window_bg_color); */
+    font-weight: bold;
+}
+
+.keybind-label {}
+
+.error {
+    padding: 10px;
+    background: @error_bg_color;
+    color: @error_fg_color;
 }
