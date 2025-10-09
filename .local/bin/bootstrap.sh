@@ -111,7 +111,7 @@ HYPRLAND_PACKAGES=(
     wireplumber
 )
 FLATPAKS=(
-    com.mattjakeman.ExtensionManager
+    # com.mattjakeman.ExtensionManager
     com.rafaelmardojai.Blanket
     com.github.tchx84.Flatseal
     io.gitlab.adhami3310.Impression
@@ -203,10 +203,10 @@ if [ "$1" == "hyprland" ]; then
     unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts"
     fc-cache -fv
     cd pwd
-
-    echo "--- uninstalling flatpaks not needed for hyprland"
-    flatpak uninstall com.mattjakeman.ExtensionManager
-    flatpak uninstall com.github.finefindus.eyedropper
+    #
+    # echo "--- uninstalling flatpaks not needed for hyprland"
+    # flatpak uninstall com.mattjakeman.ExtensionManager
+    # flatpak uninstall com.github.finefindus.eyedropper
 
     # enable dark theme for flatpak apps
     mkdir -p $HOME/.themes
@@ -233,5 +233,26 @@ if [ "$1" == "hyprland" ]; then
     systemctl --user enable --now battery_notifier.timer
 fi
 
+if [ "$1" == "flatpak" ]; then
+    echo -e "\n--- installing flatpak packages\n"
+
+    flatpak override --user --filesystem=xdg-config:gtk-3.0:ro
+    flatpak override --user --env=GTK_THEME=adw-gtk3-dark
+
+    for pak in "${FLATPAKS[@]}"; do
+        # only install if flatpak is not already installed
+        if ! flatpak info "$pak" &>/dev/null; then
+            flatpak install "$pak" --assumeyes
+        else
+            echo "--- flatpak $pak already installed. skipping"
+        fi
+    done
+fi
+
+
 # print out final message after finishing the script
+if [[ ! "$1" == "flatpak" ]]; then
+    echo -e "flatpak needs to reboot before installing any flatpaks."
+    echo -e "please reboot and run the script again with \e[40;35mflatpak\e[0m argument to finish flatpak installation\n"
+fi
 echo -e "\e[1;32mfinished running! please recheck script output for any error(s)\e[0m\n"
