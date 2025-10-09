@@ -126,6 +126,10 @@ export MANPAGER="nvim +Man! -c 'set scrolloff=0'"
 #     print -z $CMD
 # }
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Prompt
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
