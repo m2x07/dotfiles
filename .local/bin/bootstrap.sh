@@ -109,6 +109,8 @@ HYPRLAND_PACKAGES=(
     pipewire-audio
     pipewire-pulse
     wireplumber
+    uwsm
+    libnewt
 )
 FLATPAKS=(
     # com.mattjakeman.ExtensionManager
