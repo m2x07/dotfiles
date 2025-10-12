@@ -112,6 +112,7 @@ HYPRLAND_PACKAGES=(
     wireplumber
     uwsm
     libnewt
+    kate
 )
 FLATPAKS=(
     # com.mattjakeman.ExtensionManager
@@ -152,7 +153,7 @@ if ! command -v pacman &>/dev/null; then
     echo -e "$ERRSTR command 'pacman' not available. are you sure on arch linux?"
 else
     echo -e "--- running package refresh\n"
-    sudo pacman -Syy --needed --noconfirm git base-devel
+    sudo pacman -Syy --needed git base-devel
 fi
 
 # install yay, and AUR helper
@@ -172,7 +173,7 @@ fi
 
 # install all packages from the PACKAGES array
 echo -e "--- installing packages using yay\n"
-yay -S --needed --noconfirm ${PACKAGES[@]}
+yay -S --needed ${PACKAGES[@]}
 
 echo -e "\n--- installing flatpak packages\n"
 for pak in "${FLATPAKS[@]}"; do
