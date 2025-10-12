@@ -51,6 +51,11 @@ PACKAGES=(
     github-cli
     yt-dlp
     impression
+    tree
+    mesa-utils
+    webcord
+    pwvucontrol
+    keepassxc
 )
 HYPRLAND_PACKAGES=(
     alacritty
@@ -67,6 +72,7 @@ HYPRLAND_PACKAGES=(
     hyprsysteminfo
     hyprland-qtutils
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
     flameshot
     waybar
     walker
@@ -74,6 +80,7 @@ HYPRLAND_PACKAGES=(
     elephant-calc
     elephant-clipboard
     elephant-desktopapplications
+    elephant-archlinuxpkgs
     elephant-providerlist
     elephant-symbols
     elephant-todo
@@ -115,10 +122,8 @@ HYPRLAND_PACKAGES=(
     kate
 )
 FLATPAKS=(
-    # com.mattjakeman.ExtensionManager
     com.rafaelmardojai.Blanket
     com.github.tchx84.Flatseal
-    # io.gitlab.adhami3310.Impression
     fr.romainvigier.MetadataCleaner
     io.missioncenter.MissionCenter
     com.obsproject.Studio
@@ -175,6 +180,12 @@ fi
 echo -e "--- installing packages using yay\n"
 yay -S --needed ${PACKAGES[@]}
 
+# make dark theme available for flatpak
+mkdir -p ~/.themes
+cp -r /usr/share/themes/adw-gtk3-dark ~/.themes/
+flatpak override --user --filesystem=xdg-config:~/.themes:ro
+flatpak override --user --env=GTK_THEME=adw-gtk3-dark
+
 echo -e "\n--- installing flatpak packages\n"
 for pak in "${FLATPAKS[@]}"; do
     # only install if flatpak is not already installed
@@ -192,8 +203,8 @@ cd - &>/dev/null
 
 # create xdg user dirs
 mkdir -p $HOME/documents $HOME/downloads $HOME/desktop \
-	$HOME/pictures $HOME/videos $HOME/music \
-	$HOME/templates $HOME/public
+    $HOME/pictures $HOME/videos $HOME/music \
+    $HOME/templates $HOME/public
 
 # update xdg user directories
 xdg-user-dirs-update
@@ -202,28 +213,18 @@ xdg-user-dirs-update
 if [ "$1" == "hyprland" ]; then
     echo -e "--- configuring for hyprland\n"
     echo -e "--- installing packages for hyprland\n"
-    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES[@]}
+    yay -S --needed ${HYPRLAND_PACKAGES[@]}
 
     # install maple mono font
     if [ ! -d "$HOME/.fonts/maple-mono" ]; then
-    echo "--- installing maple mono font"
-    cd $(xdg-user-dir DOWNLOAD)
-    curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
-    mkdir -p $HOME/.fonts/maple-mono
-    unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts/maple-mono"
-    fc-cache -fv
-    cd -
+        echo "--- installing maple mono font"
+        cd $(xdg-user-dir DOWNLOAD)
+        curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
+        mkdir -p $HOME/.fonts/maple-mono
+        unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts/maple-mono"
+        fc-cache -fv
+        cd -
     fi
-
-    # echo "--- uninstalling flatpaks not needed for hyprland"
-    # flatpak uninstall com.mattjakeman.ExtensionManager
-    # flatpak uninstall com.github.finefindus.eyedropper
-
-    # enable dark theme for flatpak apps
-    mkdir -p $HOME/.themes
-    # copy theme to home directory so flatpaks can access it
-    cp -r /usr/share/themes/adw-gtk3-dark ~/.themes/
-    flatpak override --user --env=GTK_THEME=adw-gtk3-dark
 
     # vscode/vscodium sets itself as default app for inode/directory mimetype
     # for some reason. correct that
@@ -244,26 +245,6 @@ if [ "$1" == "hyprland" ]; then
     systemctl --user enable --now battery_notify.timer
 fi
 
-if [ "$1" == "flatpak" ]; then
-    echo -e "\n--- installing flatpak packages\n"
-
-    flatpak override --user --filesystem=xdg-config:gtk-3.0:ro
-    flatpak override --user --env=GTK_THEME=adw-gtk3-dark
-
-    for pak in "${FLATPAKS[@]}"; do
-        # only install if flatpak is not already installed
-        if ! flatpak info "$pak" &>/dev/null; then
-            flatpak install "$pak" --assumeyes
-        else
-            echo "--- flatpak $pak already installed. skipping"
-        fi
-    done
-fi
-
-
 # print out final message after finishing the script
-if [[ ! "$1" == "flatpak" ]]; then
-    echo -e "flatpak needs to reboot before installing any flatpaks."
-    echo -e "please reboot and run the script again with \e[40;35mflatpak\e[0m argument to finish flatpak installation\n"
-fi
 echo -e "\e[1;32mfinished running! please recheck script output for any error(s)\e[0m\n"
+echo -e "\nreboot your system to finalize changes"

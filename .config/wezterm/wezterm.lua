@@ -35,10 +35,10 @@ config.enable_wayland = false
 -- config.debug_key_events = true
 
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 10,
 }
 config.inactive_pane_hsb = {
 	brightness = 1,
