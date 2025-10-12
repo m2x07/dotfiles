@@ -50,6 +50,7 @@ PACKAGES=(
     adwaita-fonts
     github-cli
     yt-dlp
+    impression
 )
 HYPRLAND_PACKAGES=(
     alacritty
@@ -116,7 +117,7 @@ FLATPAKS=(
     # com.mattjakeman.ExtensionManager
     com.rafaelmardojai.Blanket
     com.github.tchx84.Flatseal
-    io.gitlab.adhami3310.Impression
+    # io.gitlab.adhami3310.Impression
     fr.romainvigier.MetadataCleaner
     io.missioncenter.MissionCenter
     com.obsproject.Studio
@@ -188,6 +189,11 @@ cd "$HOME/.dotfiles"
 stow --target $HOME .
 cd - &>/dev/null
 
+# create xdg user dirs
+mkdir -p $HOME/documents $HOME/downloads $HOME/desktop \
+	$HOME/pictures $HOME/videos $HOME/music \
+	$HOME/templates $HOME/public
+
 # update xdg user directories
 xdg-user-dirs-update
 
@@ -195,17 +201,19 @@ xdg-user-dirs-update
 if [ "$1" == "hyprland" ]; then
     echo -e "--- configuring for hyprland\n"
     echo -e "--- installing packages for hyprland\n"
-    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES}
+    yay -S --needed --noconfirm ${HYPRLAND_PACKAGES[@]}
 
     # install maple mono font
+    if [ ! -d "$HOME/.fonts/maple-mono" ]; then
     echo "--- installing maple mono font"
     cd $(xdg-user-dir DOWNLOAD)
     curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
-    mkdir $HOME/.fonts
-    unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts"
+    mkdir -p $HOME/.fonts/maple-mono
+    unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts/maple-mono"
     fc-cache -fv
-    cd pwd
-    #
+    cd -
+    fi
+
     # echo "--- uninstalling flatpaks not needed for hyprland"
     # flatpak uninstall com.mattjakeman.ExtensionManager
     # flatpak uninstall com.github.finefindus.eyedropper
@@ -232,7 +240,7 @@ if [ "$1" == "hyprland" ]; then
     # enable battery level notifier service
     systemctl --user daemon-reexec
     systemctl --user daemon-reload
-    systemctl --user enable --now battery_notifier.timer
+    systemctl --user enable --now battery_notify.timer
 fi
 
 if [ "$1" == "flatpak" ]; then
