@@ -50,12 +50,12 @@ PACKAGES=(
     adwaita-fonts
     github-cli
     yt-dlp
-    impression
     tree
     mesa-utils
     webcord
     pwvucontrol
     keepassxc
+    power-profiles-daemon
 )
 HYPRLAND_PACKAGES=(
     alacritty
@@ -104,9 +104,9 @@ HYPRLAND_PACKAGES=(
     archlinux-xdg-menu
     papirus-icon-theme
     zathura
-    zathura-pdf-popplej
+    zathura-pdf-poppler
     poppler-glib
-    pppler-qt6
+    poppler-qt6
     poppler-data
     protobuf
     cairo
@@ -128,6 +128,10 @@ FLATPAKS=(
     io.missioncenter.MissionCenter
     com.obsproject.Studio
     org.telegram.desktop
+    io.github.flattool.Warehouse
+    org.gnome.World.Iotas
+    it.mijorus.gearlever
+    me.iepure.devtoolbox
 )
 
 print_logo() {
