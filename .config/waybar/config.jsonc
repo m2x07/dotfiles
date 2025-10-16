@@ -69,16 +69,13 @@
     },
 
     "pulseaudio": {
-        "format": " {volume}",
-        // "format": "VOL: {volume}",
+        "format": " {volume}{format_source}",
         "format-muted": " MUTE",
-        // "format-muted": "VOL: MUTE",
-        "format-source": " {volume}",
-        // "format-source": "VOL: {volume}",
-        "format-source-muted": " {volume} ",
-        // "format-source-muted": "VOL: {volume} ",
+        "format-source": "",
+        "format-source-muted": "  ",
         "scroll-step": 5.0,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-middle": "pwvucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
     },
 
