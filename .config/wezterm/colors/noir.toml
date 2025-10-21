@@ -1,6 +1,6 @@
 
 [colors]
-background = '#101010'
+background = '#0c0c0c'
 foreground = '#ffffff'
 cursor_bg = '#ffffff'
 cursor_fg = '#000000'
@@ -34,7 +34,7 @@ brights = [
 background = "#2d2d2d"
 
 [colors.tab_bar.active_tab]
-bg_color = '#101010'
+bg_color = '#0c0c0c'
 fg_color = '#ffffff'
 intensity = 'Normal'
 italic = false
