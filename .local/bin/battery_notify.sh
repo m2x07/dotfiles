@@ -14,7 +14,6 @@ if [ "$STATUS" == "Discharging" ]; then
         notify-send -a "battery_notify.sh" -u critical "Battery level critical: ${CAPACITY}%" "Plug in a power source now"
     elif [ "$CAPACITY" -le 20 ]; then
         if [ ! -e $FLAGFILE ]; then
-            echo 5
             notify-send -a "battery_notify.sh" -u normal "Low battery warning!" "Only ${CAPACITY}% remaining"
             touch $FLAGFILE
         fi
@@ -22,7 +21,6 @@ if [ "$STATUS" == "Discharging" ]; then
 else
     if [ "$CAPACITY" -ge 85 ]; then
         if [ ! -e $FLAGFILE ]; then
-            echo 3
             notify-send -a "battery_notify.sh" -u normal "Battery fully charged" "You may now unplug the charger"
             touch $FLAGFILE
         fi
