@@ -1,8 +1,6 @@
 [options]
-background = 383838
 overlay = true
 overlay_font = Maple Mono NF CN:10
-overlay_background_alpha = bb
 overlay_text = [$imv_current_index\/$imv_file_count] $imv_current_file [$imv_width\x$imv_height]
 overlay_position_bottom = true
 scaling_mode = shrink

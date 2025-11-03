@@ -29,7 +29,12 @@ tooltip label {
 }
 
 #workspaces button.active {
+    background-color: rgba(21,82,143,1);
     color: rgba(225,225,225,1);
+}
+
+#workspaces button.active:hover {
+    background-color: rgba(21,82,143,1);
 }
 
 #workspaces button:hover {

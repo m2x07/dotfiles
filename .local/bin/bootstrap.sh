@@ -21,41 +21,48 @@ PACKAGES=(
     libreoffice-fresh
     zen-browser-bin
     firefox
+    pwvucontrol
+    keepassxc
+    power-profiles-daemon
+    ungoogled-chromium-bin
+    gimp
     # development
     vim
     neovim
-    bat
     lazygit
     vscodium-bin
+    github-cli
+    zed
     # Extra
-    weechat
     tealdeer
     fd
-    findutils
     ripgrep
     lsd
+    bat
+    duf
     glow
     fzf
+    weechat
+    findutils
     neofetch
     fastfetch
     starship
     adw-gtk-theme
+    yt-dlp
+    tree
+    mesa-utils
+    wev
+    usbutils
+    mpv-mpris
+    acpi
     # fonts
-    # also install Maple Mono from github
     ttf-jetbrains-mono-nerd
     ttf-roboto
+    terminus-font
     noto-fonts
     noto-fonts-emoji
     noto-fonts-cjk
     adwaita-fonts
-    github-cli
-    yt-dlp
-    tree
-    mesa-utils
-    webcord
-    pwvucontrol
-    keepassxc
-    power-profiles-daemon
 )
 HYPRLAND_PACKAGES=(
     alacritty
@@ -89,7 +96,7 @@ HYPRLAND_PACKAGES=(
     dunst
     wlogout
     ly
-    imv
+    imv-git
     brightnessctl
     qt5-wayland
     qt6-wayland
