@@ -1,9 +1,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Maple Mono NF CN";
-    font-weight: 500;
-    font-size: 14px;
+    font-family: "Terminess Nerd Font Propo";
+    font-weight: 400;
+    font-size: 16px;
 }
 
 window#waybar {
@@ -18,30 +18,28 @@ tooltip {
 }
 tooltip label {
   color: rgba(225,225,225,1);
+  font-family: "Adwaita Sans";
 }
 
 #workspaces button {
     padding: 0 5px;
-    margin: 4px 2px;
+    /* margin: 4px 2px; */
     background: transparent;
     color: rgba(130,130,130,1);
-    border-radius: 4px;
+    border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-    background-color: rgba(21,82,143,1);
+    /* background-color: rgba(21,82,143,1); */
     color: rgba(225,225,225,1);
-}
-
-#workspaces button.active:hover {
-    background-color: rgba(21,82,143,1);
+    border-bottom: 2px solid rgba(92, 159, 242, 1);
 }
 
 #workspaces button:hover {
     transition: none;
     box-shadow: none;
     text-shadow: none;
-    background: rgba(60,60,60,1);
+    background: rgba(45,45,45,1);
 }
 
 #clock {
@@ -77,4 +75,12 @@ tooltip label {
 .modules-right {
     padding: 0 10px 0 0;
     color: inherit;
+}
+
+#battery.warning {
+    color: #F5FC2F;
+}
+
+#battery.critical {
+    color: #FC4040;
 }

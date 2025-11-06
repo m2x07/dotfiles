@@ -104,6 +104,7 @@ HYPRLAND_PACKAGES=(
     qt6ct-kde
     nwg-look
     breeze
+    breeze5
     breeze-icons
     gnome-themes-extra
     ttf-hack

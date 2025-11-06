@@ -62,17 +62,23 @@
     },
 
     "battery": {
-        "format": "󱊢 {capacity}",
-        // "format": "BAT: {capacity}",
+        // "format": "󱊢 {capacity}",
+        "format": "<span fgcolor=\"#828282FF\">BAT:</span> {capacity}",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
         "tooltip": true,
         "tooltip-format": "Draw\t:\t{power}W\nHealth\t:\t{health}%"
     },
 
     "pulseaudio": {
-        "format": " {volume}{format_source}",
-        "format-muted": " MUTE",
+        // "format": " {volume}{format_source}",
+        // "format-muted": " MUTE",
+        "format": "<span fgcolor=\"#828282FF\">VOL:</span> {volume}{format_source}",
+        "format-muted": "<span fgcolor=\"#828282FF\">VOL:</span> MUTE",
         "format-source": "",
-        "format-source-muted": "  ",
+        "format-source-muted": " <span fgcolor=\"#FC4040FF\"></span>",
         "scroll-step": 5.0,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-middle": "pwvucontrol",
@@ -80,15 +86,15 @@
     },
 
     "backlight": {
-        // "format": "BRI: {percent}",
-        "format": "󰃠 {percent}",
+        "format": "<span fgcolor=\"#828282FF\">BRI:</span> {percent}",
+        // "format": "󰃠 {percent}",
         "scroll-step": 5.0,
         "tooltip-format": "Brightness: {percent}%"
     },
 
     "memory": {
-        // "format": "MEM: {used}GiB",
-        "format": " {used}GiB",
+        "format": "<span fgcolor=\"#828282FF\">MEM:</span> {used}GiB",
+        // "format": " {used}GiB",
         "on-click": "alacritty -e btop",
         "tooltip": true,
         "tooltip-format": "Memory\t:\t{used}GiB / {total}GiB ({percentage}%)\nSwap\t:\t{swapUsed}GiB / {swapTotal}GiB"
