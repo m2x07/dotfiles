@@ -17,7 +17,7 @@
     "modules-right": [
         "tray",
         "memory",
-        "pulseaudio",
+        "wireplumber",
         "backlight",
         "battery",
         "bluetooth",
@@ -65,6 +65,8 @@
         // "format": "󱊢 {capacity}",
         "format": "<span fgcolor=\"#828282FF\">BAT:</span> {capacity}",
         "states": {
+            "full": 100,
+            "normal": 85,
             "warning": 20,
             "critical": 10
         },
@@ -72,11 +74,11 @@
         "tooltip-format": "Draw\t:\t{power}W\nHealth\t:\t{health}%"
     },
 
-    "pulseaudio": {
+    "wireplumber": {
         // "format": " {volume}{format_source}",
         // "format-muted": " MUTE",
         "format": "<span fgcolor=\"#828282FF\">VOL:</span> {volume}{format_source}",
-        "format-muted": "<span fgcolor=\"#828282FF\">VOL:</span> MUTE",
+        "format-muted": "<span fgcolor=\"#828282FF\">VOL:</span> MUTE{format_source}",
         "format-source": "",
         "format-source-muted": " <span fgcolor=\"#FC4040FF\"></span>",
         "scroll-step": 5.0,

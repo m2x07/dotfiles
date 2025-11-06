@@ -41,6 +41,11 @@ decorations = "full"
 dynamic_title = true
 dimensions = { columns = 115, lines = 30 }
 
+[bell]
+animation = "Ease"
+duration = 200
+color = "#7c0000"
+
 [general]
 import = [
     # "~/.config/alacritty/colors/emarald-glow.toml"
