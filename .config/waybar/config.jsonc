@@ -41,7 +41,7 @@
         "format-on": "󰂯",
         "format-off": "󰂲",
         "format-connected": "󰂱",
-        "on-click": "alacritty -e bluetoothctl",
+        "on-click": "kitty bluetoothctl",
         "on-click-right": "bluetoothctl power off",
         "tooltip": true,
         "tooltip-format-on": "Bluetooth On",
@@ -55,7 +55,7 @@
         "format-wifi": "󰖩 ",
         "format-ethernet": "󰈀 {ifname}",
         "format-disconnected": "󰖪 ",
-        "on-click": "alacritty -e nmtui",
+        "on-click": "kitty nmtui",
         "tooltip-format-wifi": "Connected to wifi {essid}",
         "tooltip-format-ethernet": "Connected to ethernet\nGateway: {gwaddr}",
         "tooltip-format-disconnected": "Not connected to the internet",
@@ -97,7 +97,7 @@
     "memory": {
         "format": "<span fgcolor=\"#828282FF\">MEM:</span> {used}GiB",
         // "format": " {used}GiB",
-        "on-click": "alacritty -e btop",
+        "on-click": "kitty btop",
         "tooltip": true,
         "tooltip-format": "Memory\t:\t{used}GiB / {total}GiB ({percentage}%)\nSwap\t:\t{swapUsed}GiB / {swapTotal}GiB"
     },

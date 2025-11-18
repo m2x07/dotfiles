@@ -66,6 +66,7 @@ PACKAGES=(
 )
 HYPRLAND_PACKAGES=(
     alacritty
+    kitty
     bluez
     bluez-utils
     dolphin
