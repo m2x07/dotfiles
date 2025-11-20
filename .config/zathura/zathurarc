@@ -1,5 +1,6 @@
 unmap <C-r>
 map <C-i> recolor
+map <A-o> file_chooser
 set completion-highlight-bg "#2b5ce2"
 set default-bg "#383838"
 set font "Maple Mono NF CN 14px"

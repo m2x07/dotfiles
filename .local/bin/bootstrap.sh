@@ -8,7 +8,6 @@ PACKAGES=(
     # system
     zsh
     man
-    wezterm
     btop
     zip
     unzip
@@ -109,7 +108,6 @@ HYPRLAND_PACKAGES=(
     breeze-icons
     gnome-themes-extra
     ttf-hack
-    inter-fonts
     archlinux-xdg-menu
     papirus-icon-theme
     zathura
