@@ -1,10 +1,10 @@
 
 [colors]
 background = '#0c0c0c'
-foreground = '#ffffff'
-cursor_bg = '#ffffff'
+foreground = '#f4f4f4'
+cursor_bg = '#f4f4f4'
 cursor_fg = '#000000'
-cursor_border = '#ffffff'
+cursor_border = '#f4f4f4'
 selection_bg = '#1a53ac'
 selection_fg = '#e6edf3'
 split = '#333333'
@@ -27,7 +27,7 @@ brights = [
     '#2D86F3',
     '#F822C2',
     '#24DBEF',
-    '#ffffff',
+    '#f4f4f4',
 ]
 
 [colors.tab_bar]

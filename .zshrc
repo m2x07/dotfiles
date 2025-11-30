@@ -113,7 +113,7 @@ WORDCHARS='*?_[]~&;!#$%^(){}<>'
 # FZF setup
 export FZF_CTRL_T_OPTS='--prompt="Files> "'
 export FZF_ALT_C_OPTS='--height 30% --prompt="Directories> "'
-export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-border=sharp --preview-label="Preview"'
+export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-border=sharp --preview-label="Preview" --walker-skip=.git,node_modules,.cache'
 source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go

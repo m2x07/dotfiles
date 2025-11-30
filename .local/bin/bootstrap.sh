@@ -62,6 +62,14 @@ PACKAGES=(
     noto-fonts-emoji
     noto-fonts-cjk
     adwaita-fonts
+    vesktop
+    cava
+    systemdgenie
+    dosfstools
+    arch-install-scripts
+    pdftk
+    exfatprogs
+    pfetch
 )
 HYPRLAND_PACKAGES=(
     alacritty
@@ -189,7 +197,7 @@ fi
 
 # install all packages from the PACKAGES array
 echo -e "--- installing packages using yay\n"
-yay -S --needed ${PACKAGES[@]}
+yay -S --needed "${PACKAGES[@]}"
 
 # make dark theme available for flatpak
 mkdir -p ~/.themes
@@ -209,13 +217,13 @@ done
 
 # populate dotfiles
 cd "$HOME/.dotfiles"
-stow --target $HOME .
+stow --target "$HOME" .
 cd - &>/dev/null
 
 # create xdg user dirs
-mkdir -p $HOME/documents $HOME/downloads $HOME/desktop \
-    $HOME/pictures $HOME/videos $HOME/music \
-    $HOME/templates $HOME/public
+mkdir -p "$HOME"/documents "$HOME"/downloads "$HOME"/desktop \
+    "$HOME"/pictures "$HOME"/videos "$HOME"/music \
+    "$HOME"/templates "$HOME"/public
 
 # update xdg user directories
 xdg-user-dirs-update
@@ -224,14 +232,14 @@ xdg-user-dirs-update
 if [ "$1" == "hyprland" ]; then
     echo -e "--- configuring for hyprland\n"
     echo -e "--- installing packages for hyprland\n"
-    yay -S --needed ${HYPRLAND_PACKAGES[@]}
+    yay -S --needed "${HYPRLAND_PACKAGES[@]}"
 
     # install maple mono font
     if [ ! -d "$HOME/.fonts/maple-mono" ]; then
         echo "--- installing maple mono font"
-        cd $(xdg-user-dir DOWNLOAD)
+        cd "$(xdg-user-dir DOWNLOAD)"
         curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
-        mkdir -p $HOME/.fonts/maple-mono
+        mkdir -p "$HOME"/.fonts/maple-mono
         unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts/maple-mono"
         fc-cache -fv
         cd -
