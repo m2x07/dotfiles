@@ -83,6 +83,7 @@ HYPRLAND_PACKAGES=(
     hyprpicker
     hyprlock
     hyprsunset
+    hypridle
     hyprpolkitagent
     hyprsysteminfo
     hyprland-qtutils
@@ -262,6 +263,12 @@ if [ "$1" == "hyprland" ]; then
     systemctl --user daemon-reexec
     systemctl --user daemon-reload
     systemctl --user enable --now battery_notify.timer
+
+    # start hyprland-related services
+    systemctl --user enable --now hyprpaper.service
+    systemctl --user enable --now hyprsunset.service
+    systemctl --user enable --now hyprpolkitagent.service
+    systemctl --user enable --now hypridle.service
 fi
 
 # print out final message after finishing the script
