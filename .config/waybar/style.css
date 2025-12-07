@@ -8,7 +8,7 @@
 
 window#waybar {
     background: rgba(20,20,20,1);
-    color: rgba(225,225,225,1);
+    color: rgba(255,255,255,1);
 }
 
 tooltip {
@@ -17,7 +17,7 @@ tooltip {
   border-radius: 4px;
 }
 tooltip label {
-  color: rgba(225,225,225,1);
+  color: rgba(255,255,255,1);
   font-family: "Adwaita Sans";
 }
 
@@ -32,8 +32,8 @@ tooltip label {
 #workspaces button.active {
     /* background-color: rgba(21,82,143,1); */
     background-color: rgba(45, 45, 45, 1);
-    color: rgba(225,225,225,1);
-    border-bottom: 2px solid rgba(92, 159, 242, 1);
+    color: rgba(255,255,255,1);
+    /* border-bottom: 2px solid rgba(92, 159, 242, 1); */
 }
 
 #workspaces button:hover {
@@ -52,7 +52,7 @@ tooltip label {
 }
 
 #tray menu {
-    color: rgba(225,225,225,1);
+    color: rgba(255,255,255,1);
     background: black;
 }
 
@@ -60,7 +60,7 @@ tooltip label {
     font-size: 16px;
 }
 #bluetooth.connected {
-    color: rgba(225,225,225,1);
+    color: rgba(255,255,255,1);
 }
 #bluetooth.off {
     color: rgba(130,130,130,1);
