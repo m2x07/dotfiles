@@ -143,3 +143,10 @@ else
         eval "$(starship init zsh)"
     fi
 fi
+
+# fnm
+FNM_PATH="/home/m2x07/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
