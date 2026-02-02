@@ -11,4 +11,4 @@ wallp = exec hyprctl hyprpaper reload eDP-1,"$imv_current_file"
 path = exec wl-copy "$imv_current_file"
 
 [binds]
-<Ctrl+d> = exec rm "$imv_current_file"; next
+<Ctrl+d> = exec rm "$imv_current_file"; close
