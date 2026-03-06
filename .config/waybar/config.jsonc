@@ -40,7 +40,7 @@
         "format-on": "󰂯",
         "format-off": "󰂲",
         "format-connected": "󰂱",
-        "on-click": "kitty bluetoothctl",
+        "on-click": "kitty bluetui",
         "on-click-right": "bluetoothctl power off",
         "tooltip": true,
         "tooltip-format-on": "Bluetooth On",

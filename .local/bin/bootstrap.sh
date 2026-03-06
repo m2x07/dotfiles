@@ -78,6 +78,10 @@ HYPRLAND_PACKAGES=(
     bluez-utils
     dolphin
     hyprland
+    hyprcursor
+    hyprgraphics
+    hyprland-guiutils
+    hyprland-qt-support
     hyprpaper
     hyprshot
     hyprpicker
@@ -86,7 +90,6 @@ HYPRLAND_PACKAGES=(
     hypridle
     hyprpolkitagent
     hyprsysteminfo
-    hyprland-qtutils
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     flameshot
@@ -136,6 +139,7 @@ HYPRLAND_PACKAGES=(
     uwsm
     libnewt
     kate
+    bluetui
 )
 FLATPAKS=(
     com.rafaelmardojai.Blanket
