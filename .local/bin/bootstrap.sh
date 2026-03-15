@@ -23,7 +23,7 @@ PACKAGES=(
     pwvucontrol
     keepassxc
     power-profiles-daemon
-    ungoogled-chromium-bin
+    helium-browser-bin
     gimp
     # development
     vim

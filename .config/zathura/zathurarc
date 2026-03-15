@@ -5,3 +5,4 @@ set completion-highlight-bg "#2b5ce2"
 set default-bg "#383838"
 set font "Maple Mono NF CN 14px"
 set show-recent 5
+set recolor-keephue true
