@@ -243,9 +243,9 @@ if [ "$1" == "hyprland" ]; then
     if [ ! -d "$HOME/.fonts/maple-mono" ]; then
         echo "--- installing maple mono font"
         cd "$(xdg-user-dir DOWNLOAD)"
-        curl -L -o maplemono-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-CN.zip"
+        curl -L -o maplemononl-nf-cn.zip "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMonoNL-NF-CN.zip"
         mkdir -p "$HOME"/.fonts/maple-mono
-        unzip ./maplemono-nf-cn.zip -d "$HOME/.fonts/maple-mono"
+        unzip ./maplemononl-nf-cn.zip -d "$HOME/.fonts/maple-mono"
         fc-cache -fv
         cd -
     fi
