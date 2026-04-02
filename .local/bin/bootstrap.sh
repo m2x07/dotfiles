@@ -113,7 +113,7 @@ HYPRLAND_PACKAGES=(
     qt5-wayland
     qt6-wayland
     qt5ct-kde
-    qt6ct-kde
+    hyprqt6engine
     nwg-look
     breeze
     breeze5
@@ -144,13 +144,10 @@ HYPRLAND_PACKAGES=(
 FLATPAKS=(
     com.rafaelmardojai.Blanket
     com.github.tchx84.Flatseal
-    fr.romainvigier.MetadataCleaner
     io.missioncenter.MissionCenter
     com.obsproject.Studio
     org.telegram.desktop
     io.github.flattool.Warehouse
-    org.gnome.World.Iotas
-    it.mijorus.gearlever
     me.iepure.devtoolbox
 )
 
