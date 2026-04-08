@@ -70,6 +70,7 @@ PACKAGES=(
     pdftk
     exfatprogs
     pfetch
+    tree-sitter-cli
 )
 HYPRLAND_PACKAGES=(
     alacritty
