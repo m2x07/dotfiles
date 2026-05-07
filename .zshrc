@@ -82,9 +82,9 @@ export GPG_TTY
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ## Aliases
-alias ls="lsd --group-directories-first"
-alias l="lsd -l --group-directories-first"
-alias ll="lsd -al --group-directories-first"
+alias ls="lsd --group-directories-first --hyperlink always"
+alias l="lsd -l --group-directories-first --hyperlink always"
+alias ll="lsd -al --group-directories-first --hyperlink always"
 alias nv="nvim"
 alias nf="neofetch"
 alias open="xdg-open"
@@ -113,7 +113,33 @@ WORDCHARS='*?_[]~&;!#$%^(){}<>'
 # FZF setup
 export FZF_CTRL_T_OPTS='--prompt="Files> "'
 export FZF_ALT_C_OPTS='--height 30% --prompt="Directories> "'
-export FZF_DEFAULT_OPTS='--height 80% --layout reverse --border sharp --preview-border=sharp --preview-label="Preview" --walker-skip=.git,node_modules,.cache'
+export FZF_DEFAULT_OPTS="--height 80% \
+--layout reverse \
+--border sharp \
+--preview-border=sharp \
+--preview-label=Preview \
+--walker-skip=.git,node_modules,.cache \
+--highlight-line \
+--info=inline-right \
+--ansi \
+--layout=reverse \
+--border=none \
+--color=bg+:#283457 \
+--color=bg:#16161e \
+--color=border:#27a1b9 \
+--color=fg:#c0caf5 \
+--color=gutter:#16161e \
+--color=header:#ff9e64 \
+--color=hl+:#2ac3de \
+--color=hl:#2ac3de \
+--color=info:#545c7e \
+--color=marker:#ff007c \
+--color=pointer:#ff007c \
+--color=prompt:#2ac3de \
+--color=query:#c0caf5:regular \
+--color=scrollbar:#27a1b9 \
+--color=separator:#ff9e64 \
+--color=spinner:#ff007c"
 source <(fzf --zsh)
 
 export GOPATH=$HOME/.local/go
