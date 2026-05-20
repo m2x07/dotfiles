@@ -1,9 +1,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Terminess Nerd Font Propo";
+    font-family: "Maple Mono NL NF CN";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 window#waybar {

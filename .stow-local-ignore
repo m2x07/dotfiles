@@ -1,3 +1,6 @@
 README.md
 /.git
+/.gitconfig
+/.gitignore
 /extra
+/.luarc.json
