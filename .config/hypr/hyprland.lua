@@ -1,5 +1,4 @@
----@diagnostic disable: unused-local
--- hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
 hl.monitor({ output = "eDP-1", mode = "1920x1080@144", position = "0x0", scale = 1 })
 
 local browser = "zen-browser"
@@ -92,8 +91,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + C", hl.dsp.window.center())
----@diagnostic disable-next-line: undefined-global
-hl.bind(mainMod .. " + ALT + TAB", hl.dsp.focus({ last }))
+hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
 hl.bind(mainMod .. " + n", hl.dsp.window.cycle_next())
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("wlogout"))
@@ -112,10 +110,10 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ -15, 0 }))
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ 15, 0 }))
-hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ 0, 15 }))
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ 0, -15 }))
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.resize({ x = -15, y = 0 }))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = 15, y = 0 }))
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.window.resize({ x = 0, y = 15 }))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.resize({ x = 0, y = -15 }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -125,10 +123,10 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + KP_Prior", hl.dsp.workspace.move({ workspace = "e-1" }))
-hl.bind(mainMod .. " + KP_Next", hl.dsp.workspace.move({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.workspace.move({ workspace = "e-1" }))
-hl.bind(mainMod .. " + mouse_down", hl.dsp.workspace.move({ workspace = "e+1" }))
+hl.bind(mainMod .. " + KP_Prior", hl.dsp.workspace.move({ workspace = "e-1", monitor = "current" }))
+hl.bind(mainMod .. " + KP_Next", hl.dsp.workspace.move({ workspace = "e+1", monitor = "current" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.workspace.move({ workspace = "e-1", monitor = "current" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.workspace.move({ workspace = "e+1", monitor = "current" }))
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
