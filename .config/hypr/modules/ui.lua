@@ -10,7 +10,7 @@ hl.config({
 		resize_on_border = true,
 	},
 	decoration = {
-		rounding = 7,
+		rounding = 0,
 		rounding_power = 4.0,
 		blur = {
 			enabled = true,
@@ -27,6 +27,6 @@ hl.config({
 	},
 	misc = {
 		font_family = "Maple Mono NL NF CN",
-		splash_font_family = "Maple Mono NF NL CN",
+		splash_font_family = "Maple Mono NL NF CN",
 	},
 })

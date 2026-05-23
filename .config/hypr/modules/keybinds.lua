@@ -18,7 +18,7 @@ hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprlock"))
 
 -- Keybinds for general actions
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("wlogout"))
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd('loginctl terminate-user ""'))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.exec_cmd('systemctl --user stop "wayland-wm@hyprland.desktop.service"'))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
