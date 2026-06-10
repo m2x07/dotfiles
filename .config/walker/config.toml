@@ -1,8 +1,13 @@
 theme = "my_default"
 
 [keybinds]
+left = ["alt h"]
+right = ["alt l"]
+down = ["alt j"]
+up = ["alt k"]
 next = ["alt j"]
 previous = ["alt k"]
+show_actions = ["alt a"]
 
 [placeholders]
 "default" = { input = "Search applications", list = "No Results" }
