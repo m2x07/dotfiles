@@ -6,7 +6,7 @@ hl.window_rule({
 		class = "^$",
 		title = "^$",
 		xwayland = true,
-		float = true,
+        float = true,
 		fullscreen = false,
 		pin = false,
 	},
@@ -39,5 +39,6 @@ hl.window_rule({ match = { class = "it.mojorus.smile" }, float = true })
 
 --- LAYER RULES ---
 hl.layer_rule({ match = { namespace = "selection" }, no_anim = true })
+hl.layer_rule({ match = { namespace = "hyprpicker" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
 hl.layer_rule({ match = { namespace = "walker" }, no_anim = true })
