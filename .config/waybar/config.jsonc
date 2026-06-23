@@ -7,7 +7,7 @@
 
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
+        "ext/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
@@ -25,6 +25,9 @@
     ],
 
     // Module configurations
+    "ext/workspaces": {
+        "on-click": "activate",
+    },
     "clock": {
         "interval": 30,
         "format": "{:%d %b, %H:%M}",
