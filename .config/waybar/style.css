@@ -1,13 +1,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMonoNL Nerd Font Propo";
+    font-family: "MesloLGSDZ Nerd Font Propo";
     font-weight: 400;
-    font-size: 14px;
+    font-size: 11.5pt;
 }
 
 window#waybar {
-    background: rgba(20,20,20,1);
+    background: rgba(10,10,10,1);
     color: rgba(255,255,255,1);
 }
 

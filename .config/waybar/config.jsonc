@@ -15,7 +15,7 @@
     ],
     "modules-right": [
         "tray",
-        "memory",
+        // "memory",
         "wireplumber",
         "backlight",
         "battery",
@@ -30,7 +30,7 @@
     },
     "clock": {
         "interval": 30,
-        "format": "{:%d %b, %H:%M}",
+        "format": "{:%d/%m, %H:%M}",
         "format-alt": "{:%A %d %b %G}",
         "tooltip": false,
     },
