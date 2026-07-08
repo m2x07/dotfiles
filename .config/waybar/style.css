@@ -1,38 +1,41 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "MesloLGSDZ Nerd Font Propo";
+    font-family: "Maple Mono NL NF CN";
     font-weight: 400;
     font-size: 11.5pt;
 }
 
 window#waybar {
-    background: rgba(10,10,10,1);
-    color: rgba(255,255,255,1);
+    background: rgba(10, 10, 10, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 tooltip {
-  background: rgba(00, 00, 00, 0.7);
-  border: 1px solid rgba(100, 114, 125, 0.5);
-  border-radius: 4px;
+    background: rgba(00, 00, 00, 0.7);
+    border: 1px solid rgba(100, 114, 125, 0.5);
+    border-radius: 4px;
 }
+
 tooltip label {
-  color: rgba(255,255,255,1);
-  font-family: "Adwaita Sans";
+    color: rgba(255, 255, 255, 1);
+    font-family: "Adwaita Sans";
+    font-weight: 500;
+    font-size: 14px;
 }
 
 #workspaces button {
     padding: 0 5px;
     /* margin: 4px 2px; */
     background: transparent;
-    color: rgba(130,130,130,1);
+    color: rgba(130, 130, 130, 1);
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
     /* background-color: rgba(21,82,143,1); */
     background-color: rgba(45, 45, 45, 1);
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     /* border-bottom: 2px solid rgba(92, 159, 242, 1); */
 }
 
@@ -40,7 +43,7 @@ tooltip label {
     transition: none;
     box-shadow: none;
     text-shadow: none;
-    background: rgba(45,45,45,1);
+    background: rgba(45, 45, 45, 1);
 }
 
 #workspaces button.urgent {
@@ -52,25 +55,29 @@ tooltip label {
 }
 
 #tray menu {
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
     background: black;
 }
 
 #bluetooth {
     font-size: 16px;
 }
+
 #bluetooth.connected {
-    color: rgba(255,255,255,1);
+    color: rgba(255, 255, 255, 1);
 }
+
 #bluetooth.off {
-    color: rgba(130,130,130,1);
+    color: rgba(130, 130, 130, 1);
 }
 
 #network {
     font-size: 16px;
 }
-#network.disconnected, #network.disabled {
-    color: rgba(130,130,130,1);
+
+#network.disconnected,
+#network.disabled {
+    color: rgba(130, 130, 130, 1);
 }
 
 #custom-power {
